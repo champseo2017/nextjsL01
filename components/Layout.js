@@ -17,7 +17,7 @@ class Layout extends Component {
         return (
             <div>
             <Head>
-                <title>BitzPrice</title>
+                <title>Learn Nexs.js</title>
                 <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
                 <style>{`
