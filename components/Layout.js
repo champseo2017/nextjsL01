@@ -21,11 +21,11 @@ class Layout extends Component {
                 <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
                 <meta name="description" content="Wordpress api and Next.js"></meta>
-                <meta property="og:url"                content="https://shielded-stream-74873.herokuapp.com" />
-                <meta property="og:type"               content="article" />
-                <meta property="og:title"              content="Wordpress api and Next.js" />
-                <meta property="og:description"        content="Wordpress api and Next.js" />
-                <meta property="og:image"              content="https://sv1.picz.in.th/images/2019/08/25/ZUGXCz.jpg" />
+                <meta property="og:url"  content="https://shielded-stream-74873.herokuapp.com" />
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content="Wordpress api and Next.js" />
+                <meta property="og:description" content="Wordpress api and Next.js" />
+                <meta property="og:image" content="https://sv1.picz.in.th/images/2019/08/25/ZUJ7tv.jpg" />
                 <link rel="shortcut icon" href="https://www.img.in.th/images/56eb79bdec4b3f2d58faa52defcc2b00.png"></link>
                 <style>{`
                 html,body{
