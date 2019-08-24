@@ -36,7 +36,7 @@ const Index = (props) => {
     return (
       <Layout>
         <div>
-          <h1>Welcome to Learn Nexs.js of I am Champ</h1>
+          <h1>Welcome to Learn Next.js of I am Champ</h1>
           <p>Check current Bitcoin rate</p>
             <Prices bpi={props.bpi}/>
             <p></p>
