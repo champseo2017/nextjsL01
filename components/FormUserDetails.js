@@ -12,6 +12,7 @@ class FormUserDetails extends Component {
     render() {
         const {values, handleChange} = this.props
         return (
+            
             <MuiThemeProvider>
                 <React.Fragment>
                     <AppBar title="Enter User Details"/>
@@ -21,10 +22,36 @@ class FormUserDetails extends Component {
                         onChange={handleChange('firstName')}
                         defaultValue={values.firstName}
                     />
+                    <p></p>
+                    <TextField
+                        hintText="Enter Your Last Name"
+                        floatingLabelText="Last Name"
+                        onChange={handleChange('lastName')}
+                        defaultValue={values.lastName}
+                    />
+                    <p></p>
+                    <TextField
+                        hintText="Enter Your Email"
+                        floatingLabelText="Email"
+                        onChange={handleChange('email')}
+                        defaultValue={values.email}
+                    />
+                    <p></p>
+                    <RaisedButton 
+                        label="Continue"
+                        primary={true}
+                        style={styles.button}
+                        onClick={this.continue}
+                    />
                 </React.Fragment>
             </MuiThemeProvider>
+          
         )
     }
+}
+
+const styles = {
+
 }
 
 export default FormUserDetails
