@@ -6,11 +6,14 @@ const Footer = () => (
     <div className="container text-center">
       <small>Copyright &copy; Your Website</small>
     </div>
-    <style jsx>{`
-    #sticky-footer{
-        margin-top:calc(100% - 1274px);
-        height:80px;
-    }
+    <style>{`
+   
+        #sticky-footer {
+            margin-top: 20%;
+        }
+    
+  
+  
 `}</style>
   </footer>
 
