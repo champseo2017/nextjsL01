@@ -6,8 +6,24 @@ import UserForm from '../components/UserForm'
 import axios from 'axios';
 import Posts from '../components/Posts'
 import Pagination from '../components/Pagination'
+import NextSeo from 'next-seo';
 
-
+// let's create a configuration for next-seo
+const DEFAULT_SEO = {
+  title: 'Wordpress and Next.js',
+  description: 'Wordpress api and Next.js',
+  openGraph: {
+    type: 'website',
+    locale: 'th_IE',
+    url: 'https://shielded-stream-74873.herokuapp.com',
+    title: 'Wordpress api and Next.js',
+    description: 'Wordpress api and Next.js',
+    image:'https://sv1.picz.in.th/images/2019/08/25/ZUJ7tv.jpg',
+    site_name: 'herokuapp.com',
+    imageWidth: 1200,
+    imageHeight: 1200
+  }
+};
 
 const Index = (props) => {
   const [posts, setPosts] = useState([]);
@@ -35,7 +51,7 @@ const Index = (props) => {
 
     return (
       <Layout>
-        <div>
+        
           <h1>Welcome to Learn Next.js of Wordpress</h1>
           <p>Check current Bitcoin rate</p>
             <Prices bpi={props.bpi}/>
@@ -49,7 +65,7 @@ const Index = (props) => {
               totalPosts={posts.length} 
               paginate={paginate}
               />
-        </div>
+              <NextSeo config={DEFAULT_SEO} /> 
       </Layout>
     )  
 };

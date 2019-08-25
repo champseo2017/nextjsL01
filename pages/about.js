@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 import Layout from "../components/Layout";
 import $ from "jquery";
+import NextSeo from 'next-seo';
+
+// let's create a configuration for next-seo
+const DEFAULT_SEO = {
+  title: 'About',
+  description: 'About'
+};
+
 class About extends Component {
   componentDidMount() {
     let heightcheck = this.divheight.offsetHeight
@@ -51,6 +59,7 @@ class About extends Component {
         In a 2007 interview with PC World, Wozniak spoke about why he and Jobs clicked so well: "We both loved electronics and the way we used to hook up digital chips," Wozniak said. "Very few people, especially back then, had any idea what chips were, how they worked and what they could do. I had designed many computers, so I was way ahead of him in electronics and computer design, but we still had common interests. We both had pretty much sort of an independent attitude about things in the world.”
         </p>
        </div>
+       <NextSeo config={DEFAULT_SEO} /> 
     </Layout>
     )
   }

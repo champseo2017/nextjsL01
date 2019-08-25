@@ -13,20 +13,25 @@ class Layout extends Component {
             $('body').find('.heightcon').removeClass('fullHeight')
           }
       }
+    
     render() {
+       
         return (
             <div>
             <Head>
-                <title>Learn Next.js</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+            {/* bootstrap */}
+                
                 <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-                <meta name="description" content="Wordpress api and Next.js"></meta>
-                <meta property="og:url"  content="https://shielded-stream-74873.herokuapp.com" />
-                <meta property="og:type" content="article" />
-                <meta property="og:title" content="Wordpress api and Next.js" />
-                <meta property="og:description" content="Wordpress api and Next.js" />
-                <meta property="og:image" content="https://sv1.picz.in.th/images/2019/08/25/ZUJ7tv.jpg" />
+                <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+                <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
                 <link rel="shortcut icon" href="https://www.img.in.th/images/56eb79bdec4b3f2d58faa52defcc2b00.png"></link>
+            {/* bootstrap */}
                 <style>{`
                 html,body{
                     height: 100%;
@@ -41,7 +46,6 @@ class Layout extends Component {
                   }
                  
             `}</style>
-           
             </Head>    
             <Navbar/>
             <div ref={(div) =>{this.divcontainer = div; }} className="container justify-content-between fullHeight heightcon">
