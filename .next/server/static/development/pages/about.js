@@ -88,10 +88,52 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/Footer.js":
+/*!******************************!*\
+  !*** ./components/Footer.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\Footer.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const Footer = () => __jsx("footer", {
+  id: "sticky-footer",
+  className: "py-4 bg-dark text-white-50",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 2
+  },
+  __self: undefined
+}, __jsx("div", {
+  className: "container text-center",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 5
+  },
+  __self: undefined
+}, __jsx("small", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 6
+  },
+  __self: undefined
+}, "Copyright \xA9 Your Website")));
+
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
+
+/***/ }),
 
 /***/ "./components/Layout.js":
 /*!******************************!*\
@@ -107,60 +149,154 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
-var _jsxFileName = "C:\\nextjsword\\components\\Layout.js";
-
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\Layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Layout = props => __jsx("div", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 5
-  },
-  __self: undefined
-}, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
-}, __jsx("title", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7
-  },
-  __self: undefined
-}, "BitzPrice"), __jsx("link", {
-  rel: "stylesheet",
-  href: "https://bootswatch.com/4/cerulean/bootstrap.min.css",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}), __jsx("meta", {
-  name: "viewport",
-  content: "width=device-width, initial-scale=1",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9
-  },
-  __self: undefined
-})), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 11
-  },
-  __self: undefined
-}), __jsx("div", {
-  className: "container",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-}, props.children));
+
+
+
+class Layout extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  componentDidMount() {
+    let divcon = this.divcontainer.offsetHeight;
+
+    if (divcon < 600) {
+      jquery__WEBPACK_IMPORTED_MODULE_4___default()('body').find('.heightcon').addClass('fullHeight');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_4___default()('body').find('.heightcon').removeClass('fullHeight');
+    }
+  }
+
+  render() {
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, __jsx("meta", {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }), __jsx("link", {
+      rel: "stylesheet",
+      href: "https://bootswatch.com/4/cerulean/bootstrap.min.css",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }), __jsx("link", {
+      href: "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
+      rel: "stylesheet",
+      integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN",
+      crossorigin: "anonymous",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }), __jsx("script", {
+      src: "https://code.jquery.com/jquery-3.4.1.min.js",
+      integrity: "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=",
+      crossorigin: "anonymous",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }), __jsx("script", {
+      src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
+      integrity: "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49",
+      crossorigin: "anonymous",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }), __jsx("script", {
+      src: "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
+      integrity: "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy",
+      crossorigin: "anonymous",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: this
+    }), __jsx("link", {
+      rel: "shortcut icon",
+      href: "https://www.img.in.th/images/56eb79bdec4b3f2d58faa52defcc2b00.png",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: this
+    }), __jsx("style", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: this
+    }, `
+                html,body{
+                    height: 100%;
+                    padding: 0;
+                    margin: 0;
+                }
+                div#__next {
+                    height: 100%;
+                }
+                .fullHeight {
+                    height: 100vh;
+                  }
+
+                  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+                    margin-bottom: 0.5rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    color: #000000;
+                }
+                 
+            `)), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: this
+    }), __jsx("div", {
+      ref: div => {
+        this.divcontainer = div;
+      },
+      className: "container justify-content-between fullHeight heightcon",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    }, this.props.children), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }));
+  }
+
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
 
@@ -179,7 +315,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\nextjsword\\components\\Navbar.js";
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\Navbar.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -198,15 +334,21 @@ const Navbar = () => __jsx("nav", {
     lineNumber: 5
   },
   __self: undefined
-}, __jsx("a", {
-  className: "navbar-brand",
-  href: "#",
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  href: "/",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 6
   },
   __self: undefined
-}, "BitzPrice"), __jsx("div", {
+}, __jsx("a", {
+  className: "navbar-brand",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 6
+  },
+  __self: undefined
+}, "Learn Next.js")), __jsx("div", {
   className: "collapse navbar-collapse",
   __source: {
     fileName: _jsxFileName,
@@ -262,7 +404,28 @@ const Navbar = () => __jsx("nav", {
     lineNumber: 13
   },
   __self: undefined
-}, "About")))))));
+}, "About"))), __jsx("li", {
+  className: "nav-item",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 15
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  href: "/contact",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 16
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "nav-link",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 16
+  },
+  __self: undefined
+}, "Contact Us")))))));
 
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
 
@@ -945,49 +1108,103 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
-var _jsxFileName = "C:\\nextjsword\\pages\\about.js";
-
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next-seo */ "next-seo");
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "C:\\git\\nextjsL01\\pages\\about.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const About = () => __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 3
-  },
-  __self: undefined
-}, __jsx("div", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 4
-  },
-  __self: undefined
-}, __jsx("h1", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 5
-  },
-  __self: undefined
-}, "About BitzPrice"), __jsx("p", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
-}, "Appliction to view Bitcoin prices")));
+
+ // let's create a configuration for next-seo
+
+const DEFAULT_SEO = {
+  title: 'About',
+  description: 'About'
+};
+
+class About extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  componentDidMount() {
+    let heightcheck = this.divheight.offsetHeight;
+
+    if (heightcheck < 600) {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()('body').find('.heightcon').addClass('fullHeight');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()('body').find('.heightcon').removeClass('fullHeight');
+    }
+  }
+
+  render() {
+    return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, __jsx("div", {
+      ref: div => {
+        this.divheight = div;
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }, __jsx("h1", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }, "About Idol Of Me"), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, "Steve Jobs co-founded Apple Computers with Steve Wozniak. Under Jobs' guidance, the company pioneered a series of revolutionary technologies, including the iPhone and iPad. Who Was Steve Jobs? Steven Paul Jobs was an American inventor, designer and entrepreneur who was the co-founder, chief executive and chairman of Apple Computer. Apple's revolutionary products, which include the iPod, iPhone and iPad, are now seen as dictating the evolution of modern technology. Born in 1955 to two University of Wisconsin graduate students who gave him up for adoption, Jobs was smart but directionless, dropping out of college and experimenting with different pursuits before co-founding Apple with Steve Wozniak in 1976. Jobs left the company in 1985, launching Pixar Animation Studios, then returned to Apple more than a decade later. Jobs died in 2011 following a long battle with pancreatic cancer."), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: this
+    }, "Steve Jobs\u2019 Parents and Adoption Jobs was born to Joanne Schieble (later Joanne Simpson) and Abdulfattah \"John\" Jandali, two University of Wisconsin graduate students. The couple gave up their unnamed son for adoption."), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      },
+      __self: this
+    }, "Jobs\u2019 father, Jandali, was a Syrian political science professor. His mother, Schieble, worked as a speech therapist. Shortly after Jobs was placed for adoption, his biological parents married and had another child, Mona Simpson. It was not until Jobs was 27 that he was able to uncover information on his biological parents. As an infant, Jobs was adopted by Clara and Paul Jobs and named Steven Paul Jobs. Clara worked as an accountant and Paul was a Coast Guard veteran and machinist. Early Life Jobs was born on February 24, 1955, in San Francisco, California. He lived with his adoptive family in Mountain View, California, within the area that would later become known as Silicon Valley. As a boy, Jobs and his father worked on electronics in the family garage. Paul showed his son how to take apart and reconstruct electronics, a hobby that instilled confidence, tenacity and mechanical prowess in young Jobs. Steve Jobs\u2019 Education and College While Jobs was always an intelligent and innovative thinker, his youth was riddled with frustrations over formal schooling. Jobs was a prankster in elementary school due to boredom, and his fourth-grade teacher needed to bribe him to study. Jobs tested so well, however, that administrators wanted to skip him ahead to high school \u2014 a proposal that his parents declined."), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
+      },
+      __self: this
+    }, "After high school, Jobs enrolled at Reed College in Portland, Oregon. Lacking direction, he dropped out of college after six months and spent the next 18 months dropping in on creative classes at the school. Jobs later recounted how one course in calligraphy developed his love of typography. In 1974, Jobs took a position as a video game designer with Atari. Several months later he left the company to find spiritual enlightenment in India, traveling further and experimenting with psychedelic drugs. Steve Wozniak and Steve Jobs Back when Jobs was enrolled at Homestead High School, he was introduced to his future partner and co-founder of Apple Computer, Wozniak, who was attending the University of California, Berkeley. In a 2007 interview with PC World, Wozniak spoke about why he and Jobs clicked so well: \"We both loved electronics and the way we used to hook up digital chips,\" Wozniak said. \"Very few people, especially back then, had any idea what chips were, how they worked and what they could do. I had designed many computers, so I was way ahead of him in electronics and computer design, but we still had common interests. We both had pretty much sort of an independent attitude about things in the world.\u201D")), __jsx(next_seo__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      config: DEFAULT_SEO,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    }));
+  }
+
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (About);
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/about.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\nextjsword\pages\about.js */"./pages/about.js");
+module.exports = __webpack_require__(/*! C:\git\nextjsL01\pages\about.js */"./pages/about.js");
 
 
 /***/ }),
@@ -1033,6 +1250,28 @@ module.exports = require("core-js/library/fn/object/define-property");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "jquery":
+/*!*************************!*\
+  !*** external "jquery" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("jquery");
+
+/***/ }),
+
+/***/ "next-seo":
+/*!***************************!*\
+  !*** external "next-seo" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-seo");
 
 /***/ }),
 
