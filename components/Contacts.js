@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Layout from "./Layout";
 import $ from "jquery";
 import NextSeo from 'next-seo';
+import swal from 'sweetalert';
+import Router from 'next/router'
+
 
 // let's create a configuration for next-seo
 const DEFAULT_SEO = {
@@ -9,7 +12,12 @@ const DEFAULT_SEO = {
     description: 'Contact Us',
   };
 class Contacts extends Component {
-  
+    state = {
+      showAlert:true,
+      titleAlert:"Contact Us",
+      messageAlert: "ขอบคุณที่ติดต่อเรา",
+      typeAlert:"text"
+    }
     componentDidMount() {
         let heightcheck = this.sectionheight.offsetHeight
         if(heightcheck < 600){
@@ -17,7 +25,9 @@ class Contacts extends Component {
         }else{
           $('body').find('.heightcon').removeClass('fullHeight')
         }
-    
+        if (typeof window === 'undefined') {
+          global.window = {}
+        }
       }
       continue = e => {
         e.preventDefault();
@@ -29,17 +39,49 @@ class Contacts extends Component {
         this.props.resetinput();
       }
     render() {
-      const {values, handleChange} = this.props
     
-     
+      const {values, handleChange, sucesssend} = this.props
+      let objsucess = ''
+        if(sucesssend.confirmsend == 1){
+          
+
+          let promise1 = new Promise(function(resolve, reject) {
+              resolve(sucesssend.confirmsend);
+          });
+          
+          promise1.then(function(value) {
+            if(value){
+              objsucess =  swal({
+                title: "Done!",
+                text: "Thank you for contacting us.",
+                icon: "success",
+                timer: 5000,
+                button: false
+              })
+              setTimeout(function(){ 
+                window.location.href = '/contact';
+               }, 6000);
+              
+            }
+          });
+         
       
+        }else{
+          objsucess = ''
+        }
         return (
             <Layout>
+            
             {/* Then we pass the config to the plugin */}
             <section className="mb-4" ref={(section) =>{this.sectionheight = section; }}>
-            <h2 className="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-            <p className="text-center w-responsive mx-auto mb-5">Do you have any    questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.</p>
 
+            <h2 className="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+            
+              {objsucess}
+              
+            
+            <p className="text-center w-responsive mx-auto mb-5">Do you have any    questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.</p>
+            
             <div className="row">
               <div className="col-md-9 mb-md-0 mb-5">
                 <form>
