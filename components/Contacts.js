@@ -4,6 +4,7 @@ import $ from "jquery";
 import NextSeo from 'next-seo';
 import swal from 'sweetalert';
 
+
 // let's create a configuration for next-seo
 const DEFAULT_SEO = {
     title: 'Contact Us',
@@ -23,9 +24,7 @@ class Contacts extends Component {
         }else{
           $('body').find('.heightcon').removeClass('fullHeight')
         }
-        if (typeof window === 'undefined') {
-          global.window = {}
-        }
+       
       }
       continue = e => {
         e.preventDefault();
