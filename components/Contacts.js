@@ -3,8 +3,6 @@ import Layout from "./Layout";
 import $ from "jquery";
 import NextSeo from 'next-seo';
 import swal from 'sweetalert';
-import Router from 'next/router'
-
 
 // let's create a configuration for next-seo
 const DEFAULT_SEO = {
