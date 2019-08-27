@@ -4,12 +4,12 @@ import Layout from "../components/Layout";
 import Prices from '../components/Prices'
 import UserForm from '../components/UserForm'
 import axios from 'axios';
-import Posts from '../components/Posts'
 import Pagination from '../components/Pagination'
 import NextSeo from 'next-seo';
 import Paginationphotos from '../components/Paginationphotos'
 import dynamic from 'next/dynamic'
 const Photos = dynamic(import("../components/Photos"))
+const Posts = dynamic(import("../components/Posts"))
 
 
 // let's create a configuration for next-seo
@@ -95,7 +95,7 @@ const Index = (props) => {
             <p></p>
             <UserForm/>
             <p></p>
-            <h1 id="blog" className="text-primary mb-3">My Photos</h1>
+            <h1 id="photo" className="text-primary mb-3">My Photos</h1>
             <Photos photos={currentPhotos} loadingphotos={loadingphotos}/>
             <Paginationphotos
                photosPerPage={photosPerPage} 
