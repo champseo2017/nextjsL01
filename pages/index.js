@@ -4,10 +4,10 @@ import Layout from "../components/Layout";
 import Prices from '../components/Prices'
 import UserForm from '../components/UserForm'
 import axios from 'axios';
-import Pagination from '../components/Pagination'
+//import Pagination from '../components/Pagination'
 import NextSeo from 'next-seo';
-import Paginationphotos from '../components/Paginationphotos'
 import dynamic from 'next/dynamic'
+import Pagination from "react-js-pagination";
 const Photos = dynamic(import("../components/Photos"))
 const Posts = dynamic(import("../components/Posts"))
 
@@ -41,7 +41,7 @@ const Index = (props) => {
   const [photos, setphotos] = useState([]);
   const [loadingphotos, setLoadingphotos] = useState(false);
   const [currentPagephotos, setCurrentPagephotos] = useState(1);
-  const [photosPerPage] = useState(400);
+  const [photosPerPage] = useState(18);
   // photo
 
   useEffect(() => {
@@ -80,12 +80,22 @@ const Index = (props) => {
   const currentPhotos = photos.slice(indexOffFirstPhotos, indexOfLastPhotos);
 
   // Change page
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+  //const paginate = pageNumber => setCurrentPage(pageNumber);
 
   // Change pagePhotos
+  //const paginatephotos = pageNumber => setCurrentPagephotos(pageNumber);
+  const stringul = "pagination"
+  const stringli = "page-item"
+  const stringa = "page-link"
+  
+  const handlePageChange = (pageNumber) => {
+    let self = this
+    console.log(`active page is ${pageNumber}`)
+    setCurrentPagephotos(pageNumber)
+    window.location.href = '#photo'; 
+  }
 
-  const paginatephotos = pageNumber => setCurrentPagephotos(pageNumber);
-
+ 
     return (
       <Layout>
         
@@ -97,20 +107,48 @@ const Index = (props) => {
             <p></p>
             <h1 id="photo" className="text-primary mb-3">My Photos</h1>
             <Photos photos={currentPhotos} loadingphotos={loadingphotos}/>
-            <Paginationphotos
+            <Pagination
+                activePage={currentPagephotos}
+                itemsCountPerPage={photosPerPage}
+                totalItemsCount={photos.length}
+                pageRangeDisplayed={5}
+                onChange={handlePageChange}
+                innerClass={stringul}
+                itemClass={stringli}
+                linkClass={stringa}
+            />
+            <style>{`
+               .pagination {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                padding-left: 0;
+                list-style: none;
+                border-radius: 0.25rem;
+                /* text-align: center; */
+                /* float: right; */
+                /* margin-left: 50px; */
+                /* margin-right: 50px; */
+                margin-left: calc(555px - 100px);
+                /* margin-right: 10px; */
+                text-align: ceb;
+            }
+                 
+            `}</style>
+            {/* <Paginationphotos
                photosPerPage={photosPerPage} 
                totalPhotos={photos.length} 
                paginatephotos={paginatephotos}
-            />
+            /> */}
             <p></p>
             <h1 id="blog" className="text-primary mb-3">My Blog</h1>
             <p></p>
             <Posts posts={currentPosts} loading={loading}/>
-            <Pagination 
+            {/* <Pagination 
               postsPerPage={postsPerPage} 
               totalPosts={posts.length} 
               paginate={paginate}
-              />
+              /> */}
               <NextSeo config={DEFAULT_SEO} /> 
       </Layout>
     )  
