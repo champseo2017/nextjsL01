@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Contacts from '../components/Contacts'
-import Contactconfirm from '../components/Contactconfirm'
 import axios from 'axios';
 
 class Contact extends Component {
@@ -12,8 +11,10 @@ class Contact extends Component {
         contact_phone: '',
         contact_message:'',
         confirmsend:'',
+        loading:''
     }
-
+    
+   
     // Proceed to next step
     nextStep = () => {
         let contact_name = this.state.contact_name
@@ -21,6 +22,7 @@ class Contact extends Component {
         let contact_phone = this.state.contact_phone
         let contact_message = this.state.contact_message
         let self = this;
+        self.setState({loading: true})
         axios({
             method: "post",
             url: "https://restapiwp.saleallday.com/wp-json/contact/v1/send",
@@ -32,10 +34,18 @@ class Contact extends Component {
             }
           })
           .then(function (response) {
+               
             if(response.data.sucess == 1){
-                self.setState({confirmsend: 1})
+               
+                self.setState({
+                    confirmsend: 1,
+                    loading: false
+                })
             }else{
-                self.setState({confirmsend: response.data})
+                self.setState({
+                    confirmsend: response.data,
+                    loading: false
+                })
                 return false
             }
           })
@@ -62,7 +72,7 @@ class Contact extends Component {
     }
 
     render() {
-        const {step} = this.state;
+        const {step, loading} = this.state;
         const {contact_name, contact_email, contact_phone, contact_message, confirmsend, validinput} = this.state 
         
         const sucesssend = {confirmsend}
@@ -71,6 +81,7 @@ class Contact extends Component {
             case 1 :
                 return (
                     <Contacts
+                        loading = {loading}
                         nextStep={this.nextStep}
                         sucesssend = {sucesssend}
                         resetinput={this.resetinput}

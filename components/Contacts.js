@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import $ from "jquery";
 import NextSeo from 'next-seo';
 import swal from 'sweetalert';
+import LoadingOverlay from 'react-loading-overlay';
 
 // let's create a configuration for next-seo
 const DEFAULT_SEO = {
@@ -14,7 +15,7 @@ class Contacts extends Component {
       showAlert:true,
       titleAlert:"Contact Us",
       messageAlert: "ขอบคุณที่ติดต่อเรา",
-      typeAlert:"text"
+      typeAlert:"text",
     }
     componentDidMount() {
         let heightcheck = this.sectionheight.offsetHeight
@@ -36,7 +37,8 @@ class Contacts extends Component {
       }
       
     render() {
-      const {values, handleChange, sucesssend} = this.props
+      const {values, handleChange, sucesssend, loading} = this.props
+     
       let objsucess = ''
         if(sucesssend.confirmsend == 1){
           let promise1 = new Promise(function(resolve, reject) {
@@ -63,10 +65,14 @@ class Contacts extends Component {
         }
         return (
             <Layout>
-            
             {/* Then we pass the config to the plugin */}
+            <LoadingOverlay
+            active={loading ? true:false}
+            spinner
+            text='Loading your content...'
+            >
             <section className="mb-4" ref={(section) =>{this.sectionheight = section; }}>
-
+            
             <h2 className="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
             
               {objsucess}
@@ -166,8 +172,10 @@ class Contacts extends Component {
               </div>
 
             </div>
+            
 
              </section>
+             </LoadingOverlay>
              <NextSeo config={DEFAULT_SEO} />
              <style jsx>{`
              @media (max-width: 480px) { 
