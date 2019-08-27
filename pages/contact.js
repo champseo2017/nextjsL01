@@ -14,7 +14,6 @@ class Contact extends Component {
         loading:''
     }
     
-   
     // Proceed to next step
     nextStep = () => {
         let contact_name = this.state.contact_name
