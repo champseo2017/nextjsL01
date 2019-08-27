@@ -4,7 +4,6 @@ import $ from "jquery";
 import NextSeo from 'next-seo';
 import swal from 'sweetalert';
 
-
 // let's create a configuration for next-seo
 const DEFAULT_SEO = {
     title: 'Contact Us',
@@ -35,34 +34,30 @@ class Contacts extends Component {
         e.preventDefault();
         this.props.resetinput();
       }
+      
     render() {
-    
       const {values, handleChange, sucesssend} = this.props
       let objsucess = ''
         if(sucesssend.confirmsend == 1){
-          
-
           let promise1 = new Promise(function(resolve, reject) {
               resolve(sucesssend.confirmsend);
           });
-          
           promise1.then(function(value) {
             if(value){
               objsucess =  swal({
                 title: "Done!",
                 text: "Thank you for contacting us.",
                 icon: "success",
-                timer: 5000,
+                timer: 3000,
                 button: false
               })
               setTimeout(function(){ 
                 window.location.href = '/contact';
-               }, 6000);
+               }, 4000);
               
             }
           });
          
-      
         }else{
           objsucess = ''
         }
@@ -85,25 +80,29 @@ class Contacts extends Component {
                   <div className="row">
                   <div className="col-md-6">
                         <div className="md-form mb-0">
-                            <input 
-                              type="text" 
+                            <input
+                              type="text"
+    style={(sucesssend.confirmsend.error == 1 && sucesssend.confirmsend.name == '') ? {border: "1px solid red"} : {}}
                               className="form-control"
                               onChange={handleChange('contact_name')}
                               value={values.contact_name}
                               placeholder="You name"
                               />
+  {(sucesssend.confirmsend.error == 1 && sucesssend.confirmsend.name == '') ? <span>กรุณากรอกชื่อ</span> :""}
                         </div>
                     </div>
 
                     <div className="col-md-6">
                         <div className="md-form mb-0 mobile">
                             <input 
-                              type="text" 
+                              type="text"
+    style={(sucesssend.confirmsend.error == 1 && sucesssend.confirmsend.email == '') ? {border: "1px solid red"} : {}}
                               className="form-control"
                               onChange={handleChange('contact_email')}
                               value={values.contact_email}
                               placeholder="You email"
                               />
+      {(sucesssend.confirmsend.error == 1 && sucesssend.confirmsend.email == '') ? <span>กรุณากรอก Email</span> :""}
                         </div>
                     </div>
 
@@ -113,12 +112,14 @@ class Contacts extends Component {
                     <div className="col-md-12">
                         <div className="md-form mt-3">
                             <input 
-                              type="text" 
+                              type="text"
+  style={(sucesssend.confirmsend.error == 1 && sucesssend.confirmsend.phone == '') ? {border: "1px solid red"} : {}} 
                               className="form-control"
                               onChange={handleChange('contact_phone')}
                               value={values.contact_phone}
                               placeholder="You Phone"
                             />
+    {(sucesssend.confirmsend.error == 1 && sucesssend.confirmsend.phone == '') ? <span>กรุณากรอกเบอร์โทรศัพท์</span> :""}
                         </div>
                     </div>
                 </div>
@@ -128,7 +129,8 @@ class Contacts extends Component {
 
                       <div className="md-form mt-3">
                           <textarea 
-                          type="text" 
+                          type="text"
+  style={(sucesssend.confirmsend.error == 1 && sucesssend.confirmsend.message == '') ? {border: "1px solid red"} : {}} 
                           placeholder="Your message" 
                           rows="2"
                           value={values.contact_message}
@@ -136,7 +138,7 @@ class Contacts extends Component {
                           onChange={handleChange('contact_message')}
                           ></textarea>
                       </div>
-
+{(sucesssend.confirmsend.error == 1 && sucesssend.confirmsend.message == '') ? <span>กรุณากรอกข้อความที่จะติดต่อเรา</span> :""}
                   </div>
                 </div>
                 </form>

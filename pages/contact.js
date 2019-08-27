@@ -13,14 +13,13 @@ class Contact extends Component {
         contact_message:'',
         confirmsend:'',
     }
-   
+
     // Proceed to next step
     nextStep = () => {
         let contact_name = this.state.contact_name
         let contact_email = this.state.contact_email
         let contact_phone = this.state.contact_phone
         let contact_message = this.state.contact_message
-        let confirmsend = this.state.confirmsend
         let self = this;
         axios({
             method: "post",
@@ -35,6 +34,9 @@ class Contact extends Component {
           .then(function (response) {
             if(response.data.sucess == 1){
                 self.setState({confirmsend: 1})
+            }else{
+                self.setState({confirmsend: response.data})
+                return false
             }
           })
           .catch(function (error) {
@@ -61,7 +63,8 @@ class Contact extends Component {
 
     render() {
         const {step} = this.state;
-        const {contact_name, contact_email, contact_phone, contact_message, confirmsend} = this.state 
+        const {contact_name, contact_email, contact_phone, contact_message, confirmsend, validinput} = this.state 
+        
         const sucesssend = {confirmsend}
         const values = {contact_name, contact_email, contact_phone, contact_message}
         switch(step){

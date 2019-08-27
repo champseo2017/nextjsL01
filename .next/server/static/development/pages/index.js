@@ -93,6 +93,359 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/Confirm.js":
+/*!*******************************!*\
+  !*** ./components/Confirm.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! material-ui/styles/MuiThemeProvider */ "material-ui/styles/MuiThemeProvider");
+/* harmony import */ var material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! material-ui/AppBar */ "material-ui/AppBar");
+/* harmony import */ var material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var material_ui_List__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! material-ui/List */ "material-ui/List");
+/* harmony import */ var material_ui_List__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(material_ui_List__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! material-ui/RaisedButton */ "material-ui/RaisedButton");
+/* harmony import */ var material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5__);
+
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\Confirm.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+
+
+class Confirm extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
+  constructor(...args) {
+    super(...args);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "continue", e => {
+      e.preventDefault(); // PROCESS FORM //
+
+      this.props.nextStep();
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "back", e => {
+      e.preventDefault();
+      this.props.prevStep();
+    });
+  }
+
+  render() {
+    const {
+      values: {
+        firstName,
+        lastName,
+        email,
+        occupation,
+        city,
+        bio
+      }
+    } = this.props;
+    return __jsx(material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: this
+    }, __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: this
+    }, __jsx(material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      title: "Confirm User Data",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: this
+    }), __jsx(material_ui_List__WEBPACK_IMPORTED_MODULE_4__["List"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: this
+    }, __jsx(material_ui_List__WEBPACK_IMPORTED_MODULE_4__["ListItem"], {
+      primaryText: "First Name",
+      secondaryText: firstName,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      },
+      __self: this
+    }), __jsx(material_ui_List__WEBPACK_IMPORTED_MODULE_4__["ListItem"], {
+      primaryText: "Last Name",
+      secondaryText: lastName,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
+      },
+      __self: this
+    }), __jsx(material_ui_List__WEBPACK_IMPORTED_MODULE_4__["ListItem"], {
+      primaryText: "Email",
+      secondaryText: email,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: this
+    }), __jsx(material_ui_List__WEBPACK_IMPORTED_MODULE_4__["ListItem"], {
+      primaryText: "Occupation",
+      secondaryText: occupation,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 49
+      },
+      __self: this
+    }), __jsx(material_ui_List__WEBPACK_IMPORTED_MODULE_4__["ListItem"], {
+      primaryText: "City",
+      secondaryText: city,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53
+      },
+      __self: this
+    }), __jsx(material_ui_List__WEBPACK_IMPORTED_MODULE_4__["ListItem"], {
+      primaryText: "Bio",
+      secondaryText: bio,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: this
+    })), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    }), __jsx(material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      label: "Confirm && Continue",
+      primary: true,
+      style: styles.button,
+      onClick: this.continue,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 63
+      },
+      __self: this
+    }), __jsx(material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      label: "Back",
+      primary: false,
+      style: styles.button,
+      onClick: this.back,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    })));
+  }
+
+}
+
+const styles = {};
+/* harmony default export */ __webpack_exports__["default"] = (Confirm);
+
+/***/ }),
+
+/***/ "./components/Footer.js":
+/*!******************************!*\
+  !*** ./components/Footer.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\Footer.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const Footer = () => __jsx("footer", {
+  id: "sticky-footer",
+  className: "py-4 bg-dark text-white-50",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 2
+  },
+  __self: undefined
+}, __jsx("div", {
+  className: "container text-center",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 5
+  },
+  __self: undefined
+}, __jsx("small", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 6
+  },
+  __self: undefined
+}, "Copyright \xA9 Your Website")));
+
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
+
+/***/ }),
+
+/***/ "./components/FormPersonalDetails.js":
+/*!*******************************************!*\
+  !*** ./components/FormPersonalDetails.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! material-ui/styles/MuiThemeProvider */ "material-ui/styles/MuiThemeProvider");
+/* harmony import */ var material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! material-ui/AppBar */ "material-ui/AppBar");
+/* harmony import */ var material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var material_ui_TextField__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! material-ui/TextField */ "material-ui/TextField");
+/* harmony import */ var material_ui_TextField__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(material_ui_TextField__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! material-ui/RaisedButton */ "material-ui/RaisedButton");
+/* harmony import */ var material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5__);
+
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\FormPersonalDetails.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+
+
+class FormPersonalDetails extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
+  constructor(...args) {
+    super(...args);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "continue", e => {
+      e.preventDefault();
+      this.props.nextStep();
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "back", e => {
+      e.preventDefault();
+      this.props.prevStep();
+    });
+  }
+
+  render() {
+    const {
+      values,
+      handleChange
+    } = this.props;
+    return __jsx(material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }, __jsx(material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      title: "Enter Personal Details",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }), __jsx(material_ui_TextField__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      hintText: "Enter Your Occupation",
+      floatingLabelText: "Occupation",
+      onChange: handleChange('occupation'),
+      defaultValue: values.occupation,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: this
+    }), __jsx(material_ui_TextField__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      hintText: "Enter Your City",
+      floatingLabelText: "City",
+      onChange: handleChange('city'),
+      defaultValue: values.city,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    }), __jsx(material_ui_TextField__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      hintText: "Enter Your Bio",
+      floatingLabelText: "Bio",
+      onChange: handleChange('bio'),
+      defaultValue: values.bio,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }), __jsx(material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      label: "Continue",
+      primary: true,
+      style: styles.button,
+      onClick: this.continue,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }), __jsx(material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      label: "Back",
+      primary: false,
+      style: styles.button,
+      onClick: this.back,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54
+      },
+      __self: this
+    })));
+  }
+
+}
+
+const styles = {};
+/* harmony default export */ __webpack_exports__["default"] = (FormPersonalDetails);
+
+/***/ }),
+
 /***/ "./components/FormUserDetails.js":
 /*!***************************************!*\
   !*** ./components/FormUserDetails.js ***!
@@ -114,7 +467,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! material-ui/RaisedButton */ "material-ui/RaisedButton");
 /* harmony import */ var material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5__);
 
-var _jsxFileName = "C:\\nextjsword\\components\\FormUserDetails.js";
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\FormUserDetails.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -140,20 +493,20 @@ class FormUserDetails extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
     return __jsx(material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 16
       },
       __self: this
     }, __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 17
       },
       __self: this
     }, __jsx(material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3___default.a, {
       title: "Enter User Details",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 18
       },
       __self: this
     }), __jsx(material_ui_TextField__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -163,7 +516,55 @@ class FormUserDetails extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       defaultValue: values.firstName,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 19
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }), __jsx(material_ui_TextField__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      hintText: "Enter Your Last Name",
+      floatingLabelText: "Last Name",
+      onChange: handleChange('lastName'),
+      defaultValue: values.lastName,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: this
+    }), __jsx(material_ui_TextField__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      hintText: "Enter Your Email",
+      floatingLabelText: "Email",
+      onChange: handleChange('email'),
+      defaultValue: values.email,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: this
+    }), __jsx(material_ui_RaisedButton__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      label: "Continue",
+      primary: true,
+      style: styles.button,
+      onClick: this.continue,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
       },
       __self: this
     })));
@@ -171,6 +572,7 @@ class FormUserDetails extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
 
 }
 
+const styles = {};
 /* harmony default export */ __webpack_exports__["default"] = (FormUserDetails);
 
 /***/ }),
@@ -189,60 +591,127 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
-var _jsxFileName = "C:\\nextjsword\\components\\Layout.js";
-
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\Layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Layout = props => __jsx("div", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 5
-  },
-  __self: undefined
-}, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
-}, __jsx("title", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7
-  },
-  __self: undefined
-}, "BitzPrice"), __jsx("link", {
-  rel: "stylesheet",
-  href: "https://bootswatch.com/4/cerulean/bootstrap.min.css",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}), __jsx("meta", {
-  name: "viewport",
-  content: "width=device-width, initial-scale=1",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9
-  },
-  __self: undefined
-})), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 11
-  },
-  __self: undefined
-}), __jsx("div", {
-  className: "container",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-}, props.children));
+
+
+
+class Layout extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  componentDidMount() {
+    let divcon = this.divcontainer.offsetHeight;
+
+    if (divcon < 600) {
+      jquery__WEBPACK_IMPORTED_MODULE_4___default()('body').find('.heightcon').addClass('fullHeight');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_4___default()('body').find('.heightcon').removeClass('fullHeight');
+    }
+  }
+
+  render() {
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, __jsx("meta", {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }), __jsx("link", {
+      rel: "stylesheet",
+      href: "https://bootswatch.com/4/cerulean/bootstrap.min.css",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }), __jsx("link", {
+      href: "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
+      rel: "stylesheet",
+      integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN",
+      crossorigin: "anonymous",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }), __jsx("link", {
+      rel: "shortcut icon",
+      href: "https://www.img.in.th/images/56eb79bdec4b3f2d58faa52defcc2b00.png",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }), __jsx("style", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }, `
+                html,body{
+                    height: 100%;
+                    padding: 0;
+                    margin: 0;
+                }
+                div#__next {
+                    height: 100%;
+                }
+                .fullHeight {
+                    height: 100vh;
+                  }
+
+                  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+                    margin-bottom: 0.5rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    color: #000000;
+                }
+                 
+            `)), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
+      },
+      __self: this
+    }), __jsx("div", {
+      ref: div => {
+        this.divcontainer = div;
+      },
+      className: "container justify-content-between fullHeight heightcon",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    }, this.props.children), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
+      },
+      __self: this
+    }));
+  }
+
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
 
@@ -261,7 +730,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\nextjsword\\components\\Navbar.js";
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\Navbar.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -280,15 +749,21 @@ const Navbar = () => __jsx("nav", {
     lineNumber: 5
   },
   __self: undefined
-}, __jsx("a", {
-  className: "navbar-brand",
-  href: "#",
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  href: "/",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 6
   },
   __self: undefined
-}, "BitzPrice"), __jsx("div", {
+}, __jsx("a", {
+  className: "navbar-brand",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 6
+  },
+  __self: undefined
+}, "Learn Next.js")), __jsx("div", {
   className: "collapse navbar-collapse",
   __source: {
     fileName: _jsxFileName,
@@ -344,9 +819,144 @@ const Navbar = () => __jsx("nav", {
     lineNumber: 13
   },
   __self: undefined
-}, "About")))))));
+}, "About"))), __jsx("li", {
+  className: "nav-item",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 15
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  href: "/contact",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 16
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "nav-link",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 16
+  },
+  __self: undefined
+}, "Contact Us")))))));
 
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
+
+/***/ }),
+
+/***/ "./components/Pagination.js":
+/*!**********************************!*\
+  !*** ./components/Pagination.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\Pagination.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const Pagination = ({
+  postsPerPage,
+  totalPosts,
+  paginate
+}) => {
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  return __jsx("nav", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, __jsx("ul", {
+    className: "pagination",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, pageNumbers.map(number => __jsx("li", {
+    key: number,
+    className: "page-item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }, __jsx("a", {
+    onClick: () => paginate(number),
+    href: "#blog",
+    className: "page-link",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, number)))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Pagination);
+
+/***/ }),
+
+/***/ "./components/Posts.js":
+/*!*****************************!*\
+  !*** ./components/Posts.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\Posts.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const Posts = ({
+  posts,
+  loading
+}) => {
+  if (loading) {
+    return __jsx("h2", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 5
+      },
+      __self: undefined
+    }, "Loading...");
+  }
+
+  return __jsx("ul", {
+    className: "list-group mb-4",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, posts && posts.map(post => __jsx("li", {
+    key: post.id,
+    className: "list-group-item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, post.title)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Posts);
 
 /***/ }),
 
@@ -363,7 +973,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
-var _jsxFileName = "C:\\nextjsword\\components\\Prices.js";
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\Prices.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -406,7 +1016,7 @@ class Prices extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
           lineNumber: 14
         },
         __self: this
-      }, bpi.USD.rate));
+      }, " ", bpi.USD.rate));
     } else if (currency === 'GBP') {
       list = __jsx("li", {
         className: "list-group-item",
@@ -428,7 +1038,7 @@ class Prices extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
           lineNumber: 19
         },
         __self: this
-      }, bpi.GBP.rate));
+      }, " ", bpi.GBP.rate));
     } else if (currency === 'EUR') {
       list = __jsx("li", {
         className: "list-group-item",
@@ -450,7 +1060,7 @@ class Prices extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
           lineNumber: 24
         },
         __self: this
-      }, bpi.EUR.rate));
+      }, " ", bpi.EUR.rate));
     }
 
     return __jsx("div", {
@@ -512,6 +1122,92 @@ class Prices extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
 
 /***/ }),
 
+/***/ "./components/Success.js":
+/*!*******************************!*\
+  !*** ./components/Success.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! material-ui/styles/MuiThemeProvider */ "material-ui/styles/MuiThemeProvider");
+/* harmony import */ var material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! material-ui/AppBar */ "material-ui/AppBar");
+/* harmony import */ var material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3__);
+
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\Success.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+class Success extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
+  constructor(...args) {
+    super(...args);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "continue", e => {
+      e.preventDefault(); // PROCESS FORM //
+
+      this.props.nextStep();
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "back", e => {
+      e.preventDefault();
+      this.props.prevStep();
+    });
+  }
+
+  render() {
+    return __jsx(material_ui_styles_MuiThemeProvider__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, __jsx(material_ui_AppBar__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      title: "Success",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }), __jsx("h1", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }, "Thank You For Your Submission"), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, "You will get an email with further instructions")));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Success);
+
+/***/ }),
+
 /***/ "./components/UserForm.js":
 /*!********************************!*\
   !*** ./components/UserForm.js ***!
@@ -525,9 +1221,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _FormUserDetails__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormUserDetails */ "./components/FormUserDetails.js");
+/* harmony import */ var _FormPersonalDetails__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FormPersonalDetails */ "./components/FormPersonalDetails.js");
+/* harmony import */ var _Confirm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Confirm */ "./components/Confirm.js");
+/* harmony import */ var _Success__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Success */ "./components/Success.js");
 
-var _jsxFileName = "C:\\nextjsword\\components\\UserForm.js";
+var _jsxFileName = "C:\\git\\nextjsL01\\components\\UserForm.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
 
 
 
@@ -600,37 +1302,44 @@ class UserForm extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
           values: values,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43
+            lineNumber: 46
           },
           __self: this
         });
 
       case 2:
-        return __jsx("h1", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 50
-          },
-          __self: this
-        }, "FormPersonalDetails");
-
-      case 3:
-        return __jsx("h1", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 52
-          },
-          __self: this
-        }, "Confirm");
-
-      case 4:
-        return __jsx("h1", {
+        return __jsx(_FormPersonalDetails__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          nextStep: this.nextStep,
+          prevStep: this.prevStep,
+          handleChange: this.handleChange,
+          values: values,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 54
           },
           __self: this
-        }, "Success");
+        });
+
+      case 3:
+        return __jsx(_Confirm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          nextStep: this.nextStep,
+          prevStep: this.prevStep,
+          values: values,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 63
+          },
+          __self: this
+        });
+
+      case 4:
+        return __jsx(_Success__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70
+          },
+          __self: this
+        });
     }
   }
 
@@ -1344,65 +2053,157 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var _components_Prices__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Prices */ "./components/Prices.js");
 /* harmony import */ var _components_UserForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/UserForm */ "./components/UserForm.js");
-var _jsxFileName = "C:\\nextjsword\\pages\\index.js";
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_Posts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Posts */ "./components/Posts.js");
+/* harmony import */ var _components_Pagination__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Pagination */ "./components/Pagination.js");
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next-seo */ "next-seo");
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_8__);
+var _jsxFileName = "C:\\git\\nextjsL01\\pages\\index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
 
-const Index = props => __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7
-  },
-  __self: undefined
-}, __jsx("div", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}, __jsx("h1", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9
-  },
-  __self: undefined
-}, "Welcome to BitzPrice"), __jsx("p", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 10
-  },
-  __self: undefined
-}, "Check current Bitcoin rate"), __jsx(_components_Prices__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  bpi: props.bpi,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 11
-  },
-  __self: undefined
-}), __jsx("p", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-}), __jsx(_components_UserForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 13
-  },
-  __self: undefined
-}))); // fetch data async  
+
+
+ // let's create a configuration for next-seo
+
+const DEFAULT_SEO = {
+  title: 'Wordpress and Next.js',
+  description: 'Wordpress api and Next.js',
+  openGraph: {
+    type: 'website',
+    locale: 'th_IE',
+    url: 'https://shielded-stream-74873.herokuapp.com',
+    title: 'Wordpress api and Next.js',
+    description: 'Wordpress api and Next.js',
+    image: 'https://sv1.picz.in.th/images/2019/08/25/ZUJ7tv.jpg',
+    site_name: 'herokuapp.com',
+    imageWidth: 1200,
+    imageHeight: 1200
+  }
+};
+
+const Index = props => {
+  const {
+    0: posts,
+    1: setPosts
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]);
+  const {
+    0: loading,
+    1: setLoading
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false);
+  const {
+    0: currentPage,
+    1: setCurrentPage
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(1);
+  const {
+    0: postsPerPage
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(10);
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      const res = await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('https://jsonplaceholder.typicode.com/posts');
+      setPosts(res.data);
+      setLoading(false);
+    };
+
+    fetchPosts();
+  }, []); // Get current posts
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOffFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOffFirstPost, indexOfLastPost); // Change page
+
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
+  return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: undefined
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }, "Welcome to Learn Next.js of Wordpress"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  }, "Check current Bitcoin rate"), __jsx(_components_Prices__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    bpi: props.bpi,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  }), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: undefined
+  }), __jsx(_components_UserForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: undefined
+  }), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: undefined
+  }), __jsx("h1", {
+    id: "blog",
+    className: "text-primary mb-3",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: undefined
+  }, "My Blog"), __jsx(_components_Posts__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    posts: currentPosts,
+    loading: loading,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: undefined
+  }), __jsx(_components_Pagination__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    postsPerPage: postsPerPage,
+    totalPosts: posts.length,
+    paginate: paginate,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: undefined
+  }), __jsx(next_seo__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    config: DEFAULT_SEO,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: undefined
+  }));
+}; // fetch data async  
 
 
 Index.getInitialProps = async function () {
@@ -1425,8 +2226,19 @@ Index.getInitialProps = async function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\nextjsword\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\git\nextjsL01\pages\index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
@@ -1485,6 +2297,17 @@ module.exports = require("isomorphic-unfetch");
 
 /***/ }),
 
+/***/ "jquery":
+/*!*************************!*\
+  !*** external "jquery" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("jquery");
+
+/***/ }),
+
 /***/ "material-ui/AppBar":
 /*!*************************************!*\
   !*** external "material-ui/AppBar" ***!
@@ -1493,6 +2316,17 @@ module.exports = require("isomorphic-unfetch");
 /***/ (function(module, exports) {
 
 module.exports = require("material-ui/AppBar");
+
+/***/ }),
+
+/***/ "material-ui/List":
+/*!***********************************!*\
+  !*** external "material-ui/List" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("material-ui/List");
 
 /***/ }),
 
@@ -1526,6 +2360,17 @@ module.exports = require("material-ui/TextField");
 /***/ (function(module, exports) {
 
 module.exports = require("material-ui/styles/MuiThemeProvider");
+
+/***/ }),
+
+/***/ "next-seo":
+/*!***************************!*\
+  !*** external "next-seo" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-seo");
 
 /***/ }),
 
