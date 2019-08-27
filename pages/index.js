@@ -7,6 +7,10 @@ import axios from 'axios';
 import Posts from '../components/Posts'
 import Pagination from '../components/Pagination'
 import NextSeo from 'next-seo';
+import Paginationphotos from '../components/Paginationphotos'
+import dynamic from 'next/dynamic'
+const Photos = dynamic(import("../components/Photos"))
+
 
 // let's create a configuration for next-seo
 const DEFAULT_SEO = {
@@ -26,12 +30,22 @@ const DEFAULT_SEO = {
 };
 
 const Index = (props) => {
+  // post
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
+  // post
+
+  // photo
+  const [photos, setphotos] = useState([]);
+  const [loadingphotos, setLoadingphotos] = useState(false);
+  const [currentPagephotos, setCurrentPagephotos] = useState(1);
+  const [photosPerPage] = useState(400);
+  // photo
 
   useEffect(() => {
+    // fetchPosts
     const fetchPosts = async () => {
       setLoading(true);
       const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
@@ -41,13 +55,36 @@ const Index = (props) => {
     fetchPosts();
   }, []);
 
+  useEffect(() => {
+    // fetchPhotos
+    const fetchPhotos = async () => {
+      setLoadingphotos(true);
+      const res = await axios.get('https://jsonplaceholder.typicode.com/photos');
+      setphotos(res.data);
+      setLoadingphotos(false);
+    }
+    fetchPhotos();
+  }, []);
+
+  
+
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOffFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOffFirstPost, indexOfLastPost);
 
+
+  // Get current Photos
+  const indexOfLastPhotos = currentPagephotos * photosPerPage;
+  const indexOffFirstPhotos = indexOfLastPhotos - photosPerPage;
+  const currentPhotos = photos.slice(indexOffFirstPhotos, indexOfLastPhotos);
+
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
+
+  // Change pagePhotos
+
+  const paginatephotos = pageNumber => setCurrentPagephotos(pageNumber);
 
     return (
       <Layout>
@@ -58,7 +95,16 @@ const Index = (props) => {
             <p></p>
             <UserForm/>
             <p></p>
+            <h1 id="blog" className="text-primary mb-3">My Photos</h1>
+            <Photos photos={currentPhotos} loadingphotos={loadingphotos}/>
+            <Paginationphotos
+               photosPerPage={photosPerPage} 
+               totalPhotos={photos.length} 
+               paginatephotos={paginatephotos}
+            />
+            <p></p>
             <h1 id="blog" className="text-primary mb-3">My Blog</h1>
+            <p></p>
             <Posts posts={currentPosts} loading={loading}/>
             <Pagination 
               postsPerPage={postsPerPage} 

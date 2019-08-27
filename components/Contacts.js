@@ -158,15 +158,15 @@ class Contacts extends Component {
               <div className="col-md-3 text-center">
                 <ul className="list-unstyled mb-0">
                     <li><i className="fa fa-map-marker fa-2x"></i>
-                        <p>San Francisco, CA 94126, USA</p>
+                        <p>ตำบลดอนแก้ว อำเภอแม่ริม  จังหวัดเชียงใหม่ 50180</p>
                     </li>
 
                     <li><i className="fa fa-phone mt-4 fa-2x"></i>
-                        <p>+ 01 234 567 89</p>
+                        <p>093-1848557</p>
                     </li>
 
                     <li><i className="fa fa-envelope mt-4 fa-2x"></i>
-                        <p>contact@mdbootstrap.com</p>
+                        <p>boomgt4444@gmail.com</p>
                     </li>
                 </ul>
               </div>
