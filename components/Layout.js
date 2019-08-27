@@ -3,8 +3,6 @@ import Head from 'next/head';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import $ from "jquery";
-import "../static/bootstrap.min.css"
-import "../static/font-awesome.min.css"
 
 class Layout extends Component {
     componentDidMount() {
@@ -22,7 +20,12 @@ class Layout extends Component {
             <div>
             <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-            <link rel="shortcut icon" href="https://www.img.in.th/images/56eb79bdec4b3f2d58faa52defcc2b00.png"></link>
+            {/* bootstrap */}
+                
+                <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css"/>
+                <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossOrigin="anonymous"/>
+                <link rel="shortcut icon" href="https://www.img.in.th/images/56eb79bdec4b3f2d58faa52defcc2b00.png"></link>
+            {/* bootstrap */}
                 <style>{`
                 html,body{
                     height: 100%;
