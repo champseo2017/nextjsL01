@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import dynamic from 'next/dynamic'
-const Contacts = dynamic(import("../components/Contacts"))
+import Contacts from '../components/Contacts'
 
 class Contact extends Component {
     

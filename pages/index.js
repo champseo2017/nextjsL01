@@ -6,9 +6,17 @@ import axios from 'axios';
 import NextSeo from 'next-seo';
 import dynamic from 'next/dynamic'
 import Pagination from "react-js-pagination";
-const Photos = dynamic(import("../components/Photos"))
-const Posts = dynamic(import("../components/Posts"))
-const Prices = dynamic(import("../components/Prices"))
+import Agereduxindex from '../components/Age/Agereduxindex'
+
+const Photos = dynamic(import("../components/Photos"),{
+  ssr: false
+})
+const Posts = dynamic(import("../components/Posts"),{
+  ssr: false
+})
+const Prices = dynamic(import("../components/Prices"),{
+  ssr: false
+})
 
 
 // let's create a configuration for next-seo
@@ -29,6 +37,7 @@ const DEFAULT_SEO = {
 };
 
 const Index = (props) => {
+  
   // post
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -113,8 +122,11 @@ const Index = (props) => {
  
     return (
       <Layout>
-        
           <h1>Welcome to Learn Next.js of Wordpress</h1>
+          <p></p>
+            <h3>Learn redux to next.js</h3>
+              <Agereduxindex/>
+          <p></p>
           <p>Check current Bitcoin rate</p>
             <Prices bpi={props.bpi}/>
             <p></p>
