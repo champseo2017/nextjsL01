@@ -1,15 +1,20 @@
 import Fetch from 'isomorphic-unfetch';
 import React, {useState, useEffect} from 'react'
 import Layout from "../components/Layout";
-import Prices from '../components/Prices'
 import UserForm from '../components/UserForm'
 import axios from 'axios';
-//import Pagination from '../components/Pagination'
 import NextSeo from 'next-seo';
 import dynamic from 'next/dynamic'
 import Pagination from "react-js-pagination";
-const Photos = dynamic(import("../components/Photos"))
-const Posts = dynamic(import("../components/Posts"))
+const Photos = dynamic(import("../components/Photos"), {
+  ssr: false
+})
+const Posts = dynamic(import("../components/Posts"), {
+  ssr: false
+})
+const Prices = dynamic(import("../components/Prices"), {
+  ssr: false
+})
 
 
 // let's create a configuration for next-seo
