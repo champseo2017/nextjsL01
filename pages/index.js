@@ -6,15 +6,9 @@ import axios from 'axios';
 import NextSeo from 'next-seo';
 import dynamic from 'next/dynamic'
 import Pagination from "react-js-pagination";
-const Photos = dynamic(import("../components/Photos"), {
-  ssr: false
-})
-const Posts = dynamic(import("../components/Posts"), {
-  ssr: false
-})
-const Prices = dynamic(import("../components/Prices"), {
-  ssr: false
-})
+const Photos = dynamic(import("../components/Photos"))
+const Posts = dynamic(import("../components/Posts"))
+const Prices = dynamic(import("../components/Prices"))
 
 
 // let's create a configuration for next-seo

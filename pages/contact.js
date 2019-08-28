@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import dynamic from 'next/dynamic'
-const Contacts = dynamic(import("../components/Contacts"), {
-    ssr: false
-})
+const Contacts = dynamic(import("../components/Contacts"))
 
 class Contact extends Component {
     
