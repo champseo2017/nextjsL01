@@ -64,13 +64,13 @@ class Contacts extends Component {
           objsucess = ''
         }
         return (
+            <LoadingOverlay
+              active={loading ? true:false}
+              spinner
+              text='Loading your content...'
+            >
             <Layout>
             {/* Then we pass the config to the plugin */}
-            <LoadingOverlay
-            active={loading ? true:false}
-            spinner
-            text='Loading your content...'
-            >
             <section className="mb-4" ref={(section) =>{this.sectionheight = section; }}>
             
             <h2 className="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
@@ -175,7 +175,7 @@ class Contacts extends Component {
             
 
              </section>
-             </LoadingOverlay>
+            
              <NextSeo config={DEFAULT_SEO} />
              <style jsx>{`
              @media (max-width: 480px) { 
@@ -186,6 +186,7 @@ class Contacts extends Component {
                
             `}</style>
           </Layout>
+          </LoadingOverlay>
         )
     }
 }
