@@ -30,7 +30,7 @@ class Agereduxindex extends Component {
 
 function mapStateToProps(state){
         return {
-            age:state
+            age:state.count
         }
 }
 

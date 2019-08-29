@@ -3,13 +3,24 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import promiseMiddleware from 'redux-promise-middleware'
 import thunk from 'redux-thunk'
 
+
+
+const exampleInitialState = {
+  
+  count: 0
+}
+
 // reduces เพิ่มลบอายุ
-function countAge(state = 0, action){
+function countAge (state = exampleInitialState, action){
       switch(action.type){
           case 'INCREMENT':
-            return state + 1
+              return Object.assign({}, state, {
+                count: state.count + 1
+              })
           case 'DECREMENT':
-            return state - 1
+              return Object.assign({}, state, {
+                count: state.count - 1
+              })
           default:
             return state
       }
@@ -17,10 +28,10 @@ function countAge(state = 0, action){
 //
 
 
-export function initializeStore () {
+export function initializeStore (initialState = exampleInitialState) {
   return createStore(
     countAge,
-    composeWithDevTools(applyMiddleware()),
+    initialState,
     applyMiddleware(thunk,promiseMiddleware())
   )
 }
