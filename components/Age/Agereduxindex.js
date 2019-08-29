@@ -1,14 +1,28 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import {CountAgeins, DecrementAgeds} from '../../actions'
 
 class Agereduxindex extends Component {
-    state = { age: 0 }
+  
     render() {
+        // บวกอายุ
+        const increteAge = () => {
+                return (
+                    this.props.dispatch(CountAgeins())
+                )
+        }
+
+        // ลบอายุ
+        const decrement = () => {
+            return (
+                this.props.dispatch(DecrementAgeds())
+            )
+        }
         return (
             <div>
                 <h3>อายุของคุณ : {this.props.age} ปี</h3>
-                <button onClick={this.props.increteAge}>+ คลิกบวกอายุ</button>
-                <button onClick={this.props.decreteAge}>- คลิกลบอายุ</button>
+                <button onClick={increteAge}>+ คลิกบวกอายุ</button>
+                <button onClick={decrement}>- คลิกลบอายุ</button>
             </div>
         )
     }
@@ -20,17 +34,4 @@ function mapStateToProps(state){
         }
 }
 
-function mapDispatchToProps(dispatch){
-        return {
-            increteAge:() => {
-                dispatch({type: 'INCREMENT'})
-            },
-            decreteAge:()=>{
-                dispatch({type: 'DECREMENT'})
-            }
-        }
-}
-
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Agereduxindex)
+export default connect(mapStateToProps)(Agereduxindex)

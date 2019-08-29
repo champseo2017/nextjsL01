@@ -8,8 +8,8 @@ export default class MyDocument extends Document {
                     {/* bootstrap */}
                     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossOrigin="anonymous" />
                     <link rel="shortcut icon" href="https://www.img.in.th/images/56eb79bdec4b3f2d58faa52defcc2b00.png"></link>
-
                     {/* bootstrap */}
+                   
                     <style>{`
                 html,body{
                     height: 100%;

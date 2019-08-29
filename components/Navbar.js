@@ -4,6 +4,10 @@ import { Collapse, NavbarToggler, NavbarBrand } from "reactstrap";
 
 export class Navbar extends Component {
 
+    shouldComponentUpdate() {
+        return false
+    }
+    
     state = {
         isOpen: false
     };

@@ -7,6 +7,7 @@ import NextSeo from 'next-seo';
 import dynamic from 'next/dynamic'
 import Pagination from "react-js-pagination";
 import Agereduxindex from '../components/Age/Agereduxindex'
+import Googlemapindex from '../components/Googlemaps/Googlemapindex'
 
 const Photos = dynamic(import("../components/Photos"),{
   ssr: false
@@ -37,6 +38,7 @@ const DEFAULT_SEO = {
 };
 
 const Index = (props) => {
+
   
   // post
   const [posts, setPosts] = useState([]);
@@ -122,10 +124,14 @@ const Index = (props) => {
  
     return (
       <Layout>
-          <h1>Welcome to Learn Next.js of Wordpress</h1>
+          <h1>Welcome to Learn Next.js and Wordpress api</h1>
           <p></p>
             <h3>Learn redux to next.js</h3>
               <Agereduxindex/>
+          <p></p>
+          <p></p>
+            <h3 style={{textAlign:"center"}}>Learn Google map api marker with redux</h3>
+                <Googlemapindex/>
           <p></p>
           <p>Check current Bitcoin rate</p>
             <Prices bpi={props.bpi}/>
