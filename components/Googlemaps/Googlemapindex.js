@@ -27,8 +27,8 @@ export class Googlemapindex extends Component {
       displayMarkers = () => {
         return this.state.stores.map((store, index) => {
           return <Marker key={index} id={index} position={{
-           lat: store.lat,
-           lng: store.lng
+           lat: this.state.lat,
+           lng: this.state.lng
          }}
          onClick={() => console.log("You clicked me!")} />
         })
