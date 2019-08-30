@@ -2,75 +2,71 @@ import React, { Component } from 'react'
 import { Map, GoogleApiWrapper, InfoWindow, Marker} from 'google-maps-react';
 import $ from "jquery";
 import CurrentLocation from './CurrentLocation';
+import { connect } from 'react-redux'
+import geolocation from 'geolocation'
 
-
+const t = null;
 export class Googlemapindex extends Component {
     
-    state = {
-        showingInfoWindow: false,  //Hides or the shows the infoWindow
-        activeMarker: {},          //Shows the active marker upon click
-        selectedPlace: {}          //Shows the infoWindow to the selected place upon a marker
-      };
-
-    componentDidMount() {
-        $("div.google-mapsapi > div").addClass('google-child');
-    }
-
+    constructor(props) {
+        super(props);
     
-
-    onMarkerClick = (props, marker, e) => {
-            this.setState({
-            selectedPlace: props,
-            activeMarker: marker,
-            showingInfoWindow: true
-            });
-    }
-
-    onClose = () => {
-        if (this.state.showingInfoWindow) {
-          this.setState({
-            showingInfoWindow: false,
-            activeMarker: null
-          });
+        this.state = {
+          stores: [{lat: 18.7547095, lng: 99.05143679999999},
+                  {latitude: 47.359423, longitude: -122.021071},
+                  {latitude: 47.2052192687988, longitude: -121.988426208496},
+                  {latitude: 47.6307081, longitude: -122.1434325},
+                  {latitude: 47.3084488, longitude: -122.2140121},
+                  {latitude: 47.5524695, longitude: -122.0425407}]
         }
-      };
+      }
+    
+      displayMarkers = () => {
+        return this.state.stores.map((store, index) => {
+          return <Marker key={index} id={index} position={{
+           lat: store.lat,
+           lng: store.lng
+         }}
+         onClick={() => console.log("You clicked me!")} />
+        })
+      }
 
-    render() {
-        return (
-            <div className="google-mapsapi" style={{ height: '100vh'}}>
-                <CurrentLocation
-        centerAroundCurrentLocation
-        google={this.props.google}
-      >
-                    <Marker
-                        defaultPosition={{ lat: 18.7547027, lng: -99.0514312}}
-                        onClick={this.onMarkerClick}
-                        name={'ทดสอบ Marker'}
-                    />
-                    <InfoWindow
-                        marker={this.state.activeMarker}
-                        visible={this.state.showingInfoWindow}
-                        onClose={this.onClose}
-                    >
-                        <div>
-                            <h4>{this.state.selectedPlace.name}</h4>
-                        </div>
-                    </InfoWindow>
-                </CurrentLocation>
-
-                <style>{`
-                .google-child {
-                    width: 84% !important;
-                    margin-left: 4% !important;
-                    margin-right: 5% !important;
-                }
-            `}</style>
-            </div>
-        )
-
+      displayMarkers2 = () => {
+        return this.state.stores.map((store, index) => {
+          return <Marker key={index} id={index} position={{
+           lat: store.latitude,
+           lng: store.longitude
+         }}
+         onClick={() => console.log("You clicked me!")} />
+        })
+      }
+      
+    test(){
+        
+        geolocation.getCurrentPosition(function (err, position) {
+            if (err) throw err
+            console.log(position)
+        })
     }
-
+      render() {
+           
+        return (
+            <Map
+              google={this.props.google}
+              zoom={18}
+              initialCenter={{ lat: 18.7547095, lng: 99.05143679999999}}
+            >
+              
+              {this.displayMarkers()}
+              {this.displayMarkers2()}
+            </Map>
+        );
+      }
 }
+
+
+
+
 
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyDyuU3rCO5q-EZly8Wmf6WJAdjKJ_1Zbt0'

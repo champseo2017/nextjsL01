@@ -6,7 +6,7 @@ import axios from 'axios';
 import NextSeo from 'next-seo';
 import dynamic from 'next/dynamic'
 import Pagination from "react-js-pagination";
-import Agereduxindex from '../components/Age/Agereduxindex'
+//import Agereduxindex from '../components/Age/Agereduxindex'
 import Googlemapindex from '../components/Googlemaps/Googlemapindex'
 
 const Photos = dynamic(import("../components/Photos"),{
@@ -127,7 +127,7 @@ const Index = (props) => {
           <h1>Welcome to Learn Next.js and Wordpress api</h1>
           <p></p>
             <h3>Learn redux to next.js</h3>
-              <Agereduxindex/>
+              
           <p></p>
           <p></p>
             <h3 style={{textAlign:"center"}}>Learn Google map api marker with redux</h3>

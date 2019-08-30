@@ -38,10 +38,7 @@ class CurrentLocation extends Component {
             this.loadMap();
         }
         if (prevState.currentLocation !== this.state.currentLocation) {
-            
-                
-                    
-                
+    
             this.recenterMap();
         }
       
@@ -71,9 +68,7 @@ class CurrentLocation extends Component {
           
             navigator.geolocation.getCurrentPosition(pos => {
               const coords = pos.coords;
-            //   if(coords){
-            //     window.location.reload();
-            //   }
+           
             console.log(coords)
               this.setState({
                 currentLocation: {
@@ -102,7 +97,9 @@ class CurrentLocation extends Component {
           const node = ReactDOM.findDOMNode(mapRef);
     
           let { zoom } = this.props;
-          const { lat, lng } = this.state.currentLocation;
+          const { lat, lng } = this.props.initialCenter;
+          console.log(this.state.currentLocation);
+        console.log(this.props.initialCenter);
           const center = new maps.LatLng(lat, lng);
           
           const mapConfig = Object.assign(
@@ -120,9 +117,9 @@ class CurrentLocation extends Component {
 
       renderChildren() {
         const { children } = this.props;
-        
+       
         if (!children) return;
-    
+        
         return React.Children.map(children, c => {
           if (!c) return;
           return React.cloneElement(c, {
@@ -147,4 +144,17 @@ class CurrentLocation extends Component {
 }
 
 export default CurrentLocation
+
+/* 
+const mapDispatchToProps = {
+ sendMessage,
+};
+
+export default connect(null, mapDispatchToProps)(MessageSending);
+
+// MessageSending.js
+// ...
+this.props.sendMessage(message);
+// ...
+*/
 

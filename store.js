@@ -3,35 +3,47 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import promiseMiddleware from 'redux-promise-middleware'
 import thunk from 'redux-thunk'
 
-
-
 const exampleInitialState = {
-  
-  count: 0
+  count: 0,
+  valuedeflat:null,
+  valuedeflon:null,
+  valuelat:null,
+  valuelon:null,
 }
 
 // reduces เพิ่มลบอายุ
-function countAge (state = exampleInitialState, action){
-      switch(action.type){
-          case 'INCREMENT':
-              return Object.assign({}, state, {
-                count: state.count + 1
-              })
-          case 'DECREMENT':
-              return Object.assign({}, state, {
-                count: state.count - 1
-              })
-          default:
-            return state
-      }
-}
+
 //
 
+// google map lan
+export const reducer = (state = exampleInitialState, action) => {
+  switch(action.type){
+      case 'VALUEGOOGLELAT':
+          return Object.assign({}, state, {
+            valuelat: action.payload
+      })
+      case 'VALUEGOOGLELON':
+        return Object.assign({}, state, {
+          valuelon: action.payload
+      })
+      case 'VALUEGOOGLEDEFLAT':
+        return Object.assign({}, state, {
+          valuedeflat: action.payload
+      })
+      case 'VALUEGOOGLEDEFLON':
+        return Object.assign({}, state, {
+          valuedeflon: action.payload
+      })
+      default:
+        return state
+  }
+}
+// google map lan
 
 export function initializeStore (initialState = exampleInitialState) {
   return createStore(
-    countAge,
+    reducer,
     initialState,
-    applyMiddleware(thunk,promiseMiddleware())
+    applyMiddleware(thunk,promiseMiddleware()),
   )
 }
