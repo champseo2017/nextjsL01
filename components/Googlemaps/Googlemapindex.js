@@ -12,6 +12,7 @@ export class Googlemapindex extends Component {
         super(props);
     
         this.state = {
+          lat: 47.2052192687988, lng: -121.988426208496,
           stores: [{lat: 18.7547095, lng: 99.05143679999999},
                   {latitude: 47.359423, longitude: -122.021071},
                   {latitude: 47.2052192687988, longitude: -121.988426208496},
@@ -20,7 +21,9 @@ export class Googlemapindex extends Component {
                   {latitude: 47.5524695, longitude: -122.0425407}]
         }
       }
-    
+      componentDidMount() {
+          this.test()
+      }
       displayMarkers = () => {
         return this.state.stores.map((store, index) => {
           return <Marker key={index} id={index} position={{
@@ -42,19 +45,29 @@ export class Googlemapindex extends Component {
       }
       
     test(){
-        
-        geolocation.getCurrentPosition(function (err, position) {
-            if (err) throw err
-            console.log(position)
+        console.log('xx', navigator.geolocation)
+        navigator.geolocation.getCurrentPosition(this.getPosition, this.error)
+    }
+    error = position => {
+        console.log(position)
+    }
+    getPosition = position => {
+        if (!position) return
+        console.log(position)
+        this.setState({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
         })
     }
       render() {
-           
+           console.log(this.state)
         return (
             <Map
               google={this.props.google}
               zoom={18}
-              initialCenter={{ lat: 18.7547095, lng: 99.05143679999999}}
+              centerAroundCurrentLocation={true}
+              initialCenter={{ lat: this.state.lat, lng: this.state.lng}}
+              mapCenter={{ lat: this.state.lat, lng: this.state.lng}}
             >
               
               {this.displayMarkers()}
