@@ -6,6 +6,7 @@ import axios from "axios";
 import NextSeo from "next-seo";
 import dynamic from "next/dynamic";
 import Pagination from "react-js-pagination";
+import Googlemapindex from "../components/Googlemaps/Googlemapindex";
 
 const Photos = dynamic(import("../components/Photos"), {
   ssr: false
@@ -16,13 +17,6 @@ const Posts = dynamic(import("../components/Posts"), {
 const Prices = dynamic(import("../components/Prices"), {
   ssr: false
 });
-
-const Googlemapindex = dynamic(
-  import("../components/Googlemaps/Googlemapindex"),
-  {
-    ssr: false
-  }
-);
 
 // let's create a configuration for next-seo
 const DEFAULT_SEO = {
