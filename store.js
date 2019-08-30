@@ -4,11 +4,7 @@ import promiseMiddleware from 'redux-promise-middleware'
 import thunk from 'redux-thunk'
 
 const exampleInitialState = {
-  count: 0,
-  valuedeflat:null,
-  valuedeflon:null,
-  valuelat:null,
-  valuelon:null,
+  valuelocation:null,
 }
 
 // reduces เพิ่มลบอายุ
@@ -18,21 +14,13 @@ const exampleInitialState = {
 // google map lan
 export const reducer = (state = exampleInitialState, action) => {
   switch(action.type){
-      case 'VALUEGOOGLELAT':
+      case 'LOAD_LOCATION_SUCCESS':
           return Object.assign({}, state, {
-            valuelat: action.payload
+            valuelocation: action.payload
       })
-      case 'VALUEGOOGLELON':
+      case 'LOAD_LOCATION_REJECTED':
         return Object.assign({}, state, {
-          valuelon: action.payload
-      })
-      case 'VALUEGOOGLEDEFLAT':
-        return Object.assign({}, state, {
-          valuedeflat: action.payload
-      })
-      case 'VALUEGOOGLEDEFLON':
-        return Object.assign({}, state, {
-          valuedeflon: action.payload
+          valuelocation: action.payload
       })
       default:
         return state

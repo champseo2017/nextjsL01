@@ -1,61 +1,18 @@
-// end action age
+import axios from "axios";
 
-export function CountAgeins() {
-    return (dispatch) => {
-        return dispatch(countAgein())
-    }
-}
-
-function countAgein() {
-    return {
-        type: 'INCREMENT'
-    }
-}
-
-export function DecrementAgeds() {
-    return (dispatch) => {
-        return dispatch(countAgedes())
-    }
-}
-
-function countAgedes() {
-    return {
-        type: 'DECREMENT'
-    }
-}
-
-// end action age
-
-// google map default postion lat
-export const googledeflat = (value) => {
+// getaddressLocation
+export const getaddressLocation = (latitude, longitude) => {
+    var apikey = '1ab0c1cedeba4d39b98b68cdc5df73a4';
     return dispatch => {
-      dispatch({ type: "VALUEGOOGLEDEFLAT", payload:value});
+      return axios.get(`https://api.opencagedata.com/geocode/v1/json?key=${apikey}&q=${encodeURIComponent(latitude + ',' + longitude)}&pretty=1&no_annotations=1`,{
+        }).then(results => {
+            /* 
+                เมื่อข้อมูลส่งกลับมาก็สั่ง dispatch ให้ reducer รู้พร้อมส่ง payload axios จะส่งข้อมูลกลับมากับ object ชื่อ data
+            */
+        dispatch({type:'LOAD_LOCATION_SUCCESS', payload: results.data})
+        }).catch(err => {
+            // กรณี error
+            dispatch({type:'LOAD_LOCATION_REJECTED', payload: err.message})
+        })
     };
 };
-// google map default postion lat
-
-// google map default postion lon
-export const googledeflon = (value) => {
-    return dispatch => {
-      dispatch({ type: "VALUEGOOGLEDEFLON", payload:value});
-    };
-};
-// google map default postion lon
-
-// google map lat change postion
-export const googlelat = (value) => {
-    console.log(value)
-    return dispatch => {
-      dispatch({ type: "VALUEGOOGLELAT", payload:value});
-    };
-};
-// google map lat change postion
-
-
-// google map lon change postion
-export const googlelon = (value) => {
-    return dispatch => {
-      dispatch({ type: "VALUEGOOGLELON", payload:value});
-    };
-  };
-// google map lon change postion
