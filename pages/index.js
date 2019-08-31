@@ -6,6 +6,7 @@ import axios from "axios";
 import NextSeo from "next-seo";
 import dynamic from "next/dynamic";
 import Pagination from "react-js-pagination";
+import Prices from "../components/Prices"
 import Googlemapindex from "../components/Googlemaps/Googlemapindex";
 import {VerticleButton as ScrollUpButton} from "react-scroll-up-button"; //Add this line Here
 
@@ -13,9 +14,6 @@ const Photos = dynamic(import("../components/Photos"), {
   ssr: false
 });
 const Posts = dynamic(import("../components/Posts"), {
-  ssr: false
-});
-const Prices = dynamic(import("../components/Prices"), {
   ssr: false
 });
 
