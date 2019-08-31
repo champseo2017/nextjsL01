@@ -10,11 +10,27 @@ const DEFAULT_SEO = {
 };
 
 class About extends Component {
+
+  componentDidMount(){
+    let pathname = window.location.pathname;
+    let res = pathname.split("/");
+    let i;
+    for (i = 0; i < res.length; i++) {
+        if(res[1] == 'about'){
+            var w = window.innerWidth;
+            if(w == 812){
+                $("body").find('.about-class').css("height", "unset");
+            }else if(w > 1200){
+                $("body").find('.about-class').css("height", "100vh");
+            }
+        }
+    }
+}
  
   render() {
     return (
       <Layout>
-      <div className="about-class" style={{height:"100vh"}}>
+      <div className="about-class">
         <h1>About Idol Of Me</h1>
         <p>Steve Jobs co-founded Apple Computers with Steve Wozniak. Under Jobs' guidance, the company pioneered a series of revolutionary technologies, including the iPhone and iPad.
         Who Was Steve Jobs?
@@ -51,24 +67,6 @@ class About extends Component {
         In a 2007 interview with PC World, Wozniak spoke about why he and Jobs clicked so well: "We both loved electronics and the way we used to hook up digital chips," Wozniak said. "Very few people, especially back then, had any idea what chips were, how they worked and what they could do. I had designed many computers, so I was way ahead of him in electronics and computer design, but we still had common interests. We both had pretty much sort of an independent attitude about things in the world.”
         </p>
        </div>
-       <style>{`
-            
-            @media only screen and (max-device-width: 1000px){
-              .about-class {
-                height: unset !important;
-            }
-            }
-            /* iPads (landscape) ----------- */
-            @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-                .container.justify-content-between.heightcon {
-                    height: 100vh !important;
-                }
-
-                .about-class {
-                    height: unset !important;
-                }
-            }
-          `}</style>
        <NextSeo config={DEFAULT_SEO} /> 
     </Layout>
     )
