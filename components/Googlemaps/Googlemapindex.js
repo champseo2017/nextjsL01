@@ -108,7 +108,6 @@ export class Googlemapindex extends Component {
   };
   getPosition = position => {
     if (!position) return;
-    console.log(position)
     this.setState({
       lat: position.coords.latitude,
       lng: position.coords.longitude
