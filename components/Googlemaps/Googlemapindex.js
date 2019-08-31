@@ -32,16 +32,22 @@ export class Googlemapindex extends Component {
     });
   };
 
+  onMarkerClickdefault = (props, marker, e) => {
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+  };
+
   displayMarkersallow = () => {
     const { locations } = this.props;
+    
     if (locations === null) {
       return true;
     }
 
-    const splitlocation =
-      locations.results[0].formatted.split(",") === null
-        ? ""
-        : locations.results[0].formatted.split(",");
+    const splitlocation = locations.results[0].formatted.split(",")
 
     return (
       <Marker
@@ -49,6 +55,17 @@ export class Googlemapindex extends Component {
           lat: this.state.lat,
           lng: this.state.lng
         }}
+        icon={{
+          //path: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+          //strokeColor: "black",
+          url: "https://uppic.cc/d/5vtM",
+          //url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+          //scale: 10
+          scaledSize: new google.maps.Size(50, 50),
+          origin: new google.maps.Point(0,0), // origin
+          anchor: new google.maps.Point(0, 0) // anchor
+        }}
+        
         onClick={this.onMarkerClick}
         name={splitlocation[0]}
       />
@@ -56,6 +73,7 @@ export class Googlemapindex extends Component {
   };
 
   displayMarkersstore = () => {
+   
     return this.state.stores.map((store, index) => {
       return (
         <Marker
@@ -65,8 +83,18 @@ export class Googlemapindex extends Component {
             lat: store.latitude,
             lng: store.longitude
           }}
-          onClick={() => console.log("You clicked me!")}
-          name={"Kenyatta International Convention Centre"}
+          icon={{
+            //path: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            //strokeColor: "black",
+            url: "https://uppic.cc/d/5vtM",
+            //url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            //scale: 10
+            scaledSize: new google.maps.Size(50, 50),
+            origin: new google.maps.Point(0,0), // origin
+            anchor: new google.maps.Point(0, 0) // anchor
+          }}
+          onClick={this.onMarkerClickdefault}
+          name={"Test marker stores loop"}
         />
       );
     });
@@ -80,6 +108,7 @@ export class Googlemapindex extends Component {
   };
   getPosition = position => {
     if (!position) return;
+    console.log(position)
     this.setState({
       lat: position.coords.latitude,
       lng: position.coords.longitude
@@ -100,7 +129,7 @@ export class Googlemapindex extends Component {
              `}</style>
         <Map
           google={this.props.google}
-          zoom={18}
+          zoom={19}
           centerAroundCurrentLocation={true}
           initialCenter={{ lat: this.state.lat, lng: this.state.lng }}
           mapCenter={{ lat: this.state.lat, lng: this.state.lng }}
