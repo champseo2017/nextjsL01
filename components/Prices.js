@@ -25,7 +25,7 @@ class Prices extends Component {
 
         }   
         return (
-            <div>
+            <div >
                 <ul className="list-group">
                 {list}
                 </ul>

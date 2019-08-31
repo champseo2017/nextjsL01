@@ -157,7 +157,7 @@ const Index = props => {
       </h1>
       <p></p>
       <Posts posts={currentPosts} loading={loading} />
-      {paginationposts}
+      {paginationposts} 
       <ScrollUpButton AnimationDuration={1500}/>
       <NextSeo config={DEFAULT_SEO} />
     </Layout>

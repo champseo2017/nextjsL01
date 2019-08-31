@@ -13,7 +13,7 @@ class FormUserDetails extends Component {
         const {values, handleChange} = this.props
         return (
             
-            <MuiThemeProvider>
+            <MuiThemeProvider >
                 <React.Fragment>
                     <AppBar title="Enter User Details"/>
                     <TextField

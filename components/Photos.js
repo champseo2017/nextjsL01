@@ -4,7 +4,7 @@ const Photos = ({ photos, loadingphotos }) => {
     if (loadingphotos) {
         return <h2>Loading...</h2>
     }
-    return <div className="row">
+    return <div className="row" >
         {photos && photos.map(photo => (
             <div key={photo.id} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <div className="box-part text-center">

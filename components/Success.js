@@ -19,7 +19,7 @@ class Success extends Component {
 
         return (
             
-            <MuiThemeProvider>
+            <MuiThemeProvider >
                 <React.Fragment>
                     <AppBar title="Success"/>
                     <p></p>

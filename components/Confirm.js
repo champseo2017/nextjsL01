@@ -30,7 +30,7 @@ class Confirm extends Component {
         } = this.props
         return (
             
-            <MuiThemeProvider>
+            <MuiThemeProvider style={{ height: "100vh" }}>
                 <React.Fragment>
                     <AppBar title="Confirm User Data"/>
                         <List>
