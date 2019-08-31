@@ -7,6 +7,7 @@ import NextSeo from "next-seo";
 import dynamic from "next/dynamic";
 import Pagination from "react-js-pagination";
 import Googlemapindex from "../components/Googlemaps/Googlemapindex";
+import {VerticleButton as ScrollUpButton} from "react-scroll-up-button"; //Add this line Here
 
 const Photos = dynamic(import("../components/Photos"), {
   ssr: false
@@ -157,6 +158,7 @@ const Index = props => {
       <p></p>
       <Posts posts={currentPosts} loading={loading} />
       {paginationposts}
+      <ScrollUpButton AnimationDuration={1500}/>
       <NextSeo config={DEFAULT_SEO} />
     </Layout>
   );
