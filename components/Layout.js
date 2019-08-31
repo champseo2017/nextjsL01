@@ -8,12 +8,10 @@ class Layout extends Component {
     componentDidMount(){
         let pathname = window.location.pathname;
         let res = pathname.split("/");
-        
         let i;
         for (i = 0; i < res.length; i++) {
             if(res[1] == 'contact'){
                 var w = window.innerWidth;
-                console.log(w);
                 if(w == 812){
                     $("body").find('.contact-class').css("height", "unset");
                     $("body").find('.mobile').css("padding-top", "0rem");
