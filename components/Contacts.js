@@ -19,7 +19,6 @@ class Contacts extends Component {
     }
     componentDidMount() {
         let heightcheck = this.sectionheight.offsetHeight
-        console.log(heightcheck)
         if(heightcheck < 600){
           $('body').find('.heightcon').removeClass('fullHeight')
           
