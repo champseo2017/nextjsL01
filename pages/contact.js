@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, PureComponent } from 'react'
 import axios from 'axios';
 import Contacts from '../components/Contacts'
 
-class Contact extends Component {
+class Contact extends PureComponent {
     
     state = {
         step: 1,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,PureComponent } from 'react'
 import Layout from "../components/Layout";
 import $ from "jquery";
 import NextSeo from 'next-seo';
@@ -9,7 +9,7 @@ const DEFAULT_SEO = {
   description: 'About'
 };
 
-class About extends Component {
+class About extends PureComponent {
 
   componentDidMount(){
     let pathname = window.location.pathname;

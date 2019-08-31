@@ -62,7 +62,6 @@ export class Navbar extends Component {
   componentDidMount(){
     const valuelan = localStorage.getItem('dropDownValue');
     this.setState({dropDownValue: valuelan !== null ? valuelan:'เปลียนภาษา'})
-    
   }
 
   render() {
