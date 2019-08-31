@@ -8,7 +8,9 @@ import dynamic from "next/dynamic";
 import Pagination from "react-js-pagination";
 import Prices from "../components/Prices"
 import Googlemapindex from "../components/Googlemaps/Googlemapindex";
-import {VerticleButton as ScrollUpButton} from "react-scroll-up-button"; //Add this line Here
+import {VerticleButton as ScrollUpButton} from "react-scroll-up-button";
+import { locale } from '../locales/index'
+
 
 const Photos = dynamic(import("../components/Photos"), {
   ssr: false
@@ -120,6 +122,11 @@ const Index = props => {
   return (
     <Layout>
       <h1>Welcome to Learn Next.js and Wordpress api</h1>
+      <p></p>
+      <div>
+            <h1>{locale.t('hello')}</h1>
+            <h2>{locale.t('greeting')}</h2>
+      </div>
       <p></p>
       <h3>Learn redux to next.js</h3>
 
