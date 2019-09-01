@@ -38,7 +38,6 @@ const DEFAULT_SEO = {
 };
 
 const Index = props => {
-  console.log(props.lanenthredux);
   // post
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
