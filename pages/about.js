@@ -48,11 +48,24 @@ class About extends PureComponent {
     }, 3000);
    
   }
-  MyFacebookLoader = () => <BulletList />;
+
+  
+  
   render() {
+    const ImageList = () => (
+      <React.Fragment>
+        {Array(2)
+          .fill('')
+          .map((e, i) => (
+            <BulletList
+              key={i}
+            />
+          ))}
+      </React.Fragment>
+    )
     let loaddingsk = "";
     if (this.state.load) {
-      loaddingsk = this.MyFacebookLoader();
+      loaddingsk = ImageList();
      
     } else {
       $("body")
