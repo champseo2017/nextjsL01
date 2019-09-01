@@ -28,7 +28,9 @@
     "next-seo": "0.0.7",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
+    "react-content-loader": "^4.2.2",
     "react-dom": "^16.9.0",
+    "react-i18nify": "^1.8.7",
     "react-js-pagination": "^3.0.2",
     "react-loading-overlay": "^1.0.1",
     "react-redux": "^7.1.0",
@@ -38,7 +40,6 @@
     "redux-devtools-extension": "^2.13.2",
     "redux-promise-middleware": "^4.4.2",
     "redux-thunk": "^2.2.0",
-    "sweetalert": "^2.1.2",
-    "react-i18nify": "^1.8.7"
+    "sweetalert": "^2.1.2"
   }
 }
