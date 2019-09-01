@@ -8,6 +8,8 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import { lanenth } from "../actions";
+import { connect } from "react-redux";
 
 
 export class Navbar extends Component {
@@ -57,15 +59,17 @@ export class Navbar extends Component {
     const valuelan = localStorage.getItem('dropDownValue');
     
     this.setState({dropDownValue: valuelan})
+    
   }
 
   componentDidMount(){
     const valuelan = localStorage.getItem('dropDownValue');
     this.setState({dropDownValue: valuelan !== null ? valuelan:'เปลียนภาษา'})
+  
   }
 
   render() {
-       
+    this.props.lanenth(this.state.dropDownValue);
     return (
       <nav className="navbar navbar-expand-lg  navbar-dark bg-dark mb-4">
         <div className="container">
@@ -99,4 +103,10 @@ export class Navbar extends Component {
   }
 }
 
-export default Navbar;
+
+
+const mapDispatchToProps = {
+  lanenth
+};
+
+export default connect(null, mapDispatchToProps)(Navbar);

@@ -6,11 +6,12 @@ import axios from "axios";
 import NextSeo from "next-seo";
 import dynamic from "next/dynamic";
 import Pagination from "react-js-pagination";
-import Prices from "../components/Prices"
+import Prices from "../components/Prices";
 import Googlemapindex from "../components/Googlemaps/Googlemapindex";
-import {VerticleButton as ScrollUpButton} from "react-scroll-up-button";
-import { locale } from '../locales/index'
-
+import { VerticleButton as ScrollUpButton } from "react-scroll-up-button";
+import { locale } from "../locales/index";
+import { connect } from "react-redux";
+const { Translate, Localize } = require("react-i18nify");
 
 const Photos = dynamic(import("../components/Photos"), {
   ssr: false
@@ -37,6 +38,7 @@ const DEFAULT_SEO = {
 };
 
 const Index = props => {
+  console.log(props.lanenthredux);
   // post
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -119,14 +121,30 @@ const Index = props => {
     />
   );
 
+  let lanth = "";
+  if (props.lanenthredux === "Thai") {
+    lanth = (
+      <div>
+        <h1>{locale.t("hello")}</h1>
+        {/* <h2>{locale.t('name',{name: 'วิว'})}</h2>
+                <h2>{locale.t('greeting')}</h2> */}
+      </div>
+    );
+  } else if (props.lanenthredux === "English") {
+    lanth = (
+      <div>
+        <h1>
+          <Translate value="helloen" />
+        </h1>
+      </div>
+    );
+  }
+
   return (
     <Layout>
       <h1>Welcome to Learn Next.js and Wordpress api</h1>
       <p></p>
-      <div>
-            <h1>{locale.t('hello')}</h1>
-            <h2>{locale.t('greeting')}</h2>
-      </div>
+      <div>{lanth}</div>
       <p></p>
       <h3>Learn redux to next.js</h3>
 
@@ -162,8 +180,8 @@ const Index = props => {
       </h1>
       <p></p>
       <Posts posts={currentPosts} loading={loading} />
-      {paginationposts} 
-      <ScrollUpButton AnimationDuration={1500}/>
+      {paginationposts}
+      <ScrollUpButton AnimationDuration={1500} />
       <NextSeo config={DEFAULT_SEO} />
     </Layout>
   );
@@ -173,11 +191,19 @@ const Index = props => {
 Index.getInitialProps = async function() {
   const res = await fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
   const data = await res.json();
-
   return {
     // props
     bpi: data.bpi
   };
 };
 
-export default Index;
+function mapStateToProps(state) {
+  return {
+    lanenthredux: state.valuelan
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(Index);

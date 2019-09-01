@@ -16,3 +16,11 @@ export const getaddressLocation = (latitude, longitude) => {
         })
     };
 };
+
+// lan en th
+export const lanenth = (valuelan) => {
+    return dispatch => {
+        dispatch({type:'LOAD_LANENTH', payload: valuelan})
+    
+    };
+};

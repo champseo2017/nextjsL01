@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import $ from "jquery";
-import CurrentLocation from "./CurrentLocation";
 import { connect } from "react-redux";
 import geolocation from "geolocation";
 import { getaddressLocation } from "../../actions";

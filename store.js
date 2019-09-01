@@ -5,13 +5,13 @@ import thunk from 'redux-thunk'
 
 const exampleInitialState = {
   valuelocation:null,
+  valuelan:null
 }
 
 // reduces เพิ่มลบอายุ
 
 //
 
-// google map lan
 export const reducer = (state = exampleInitialState, action) => {
   switch(action.type){
       case 'LOAD_LOCATION_SUCCESS':
@@ -22,11 +22,15 @@ export const reducer = (state = exampleInitialState, action) => {
         return Object.assign({}, state, {
           valuelocation: action.payload
       })
+      case 'LOAD_LANENTH':
+        return Object.assign({}, state, {
+          valuelan: action.payload
+      })
       default:
         return state
   }
 }
-// google map lan
+
 
 export function initializeStore (initialState = exampleInitialState) {
   return createStore(
