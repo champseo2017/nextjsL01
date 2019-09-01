@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component,PureComponent } from 'react'
 import FormUserDetails from './FormUserDetails'
 import FormPersonalDetails from './FormPersonalDetails'
 import Confirm from './Confirm'
 import Success from './Success'
 
-class UserForm extends Component {
+class UserForm extends PureComponent {
     state = {
         step: 1,
         firstName: '',

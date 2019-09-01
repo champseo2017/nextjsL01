@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component,PureComponent } from 'react'
 
-class Prices extends Component {
+class Prices extends PureComponent {
     state = {
         currency:'USD'
     }

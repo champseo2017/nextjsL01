@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component,PureComponent } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import $ from "jquery";
 import { connect } from "react-redux";
 import geolocation from "geolocation";
 import { getaddressLocation } from "../../actions";
 
-export class Googlemapindex extends Component {
+export class Googlemapindex extends PureComponent {
   constructor(props) {
     super(props);
 
