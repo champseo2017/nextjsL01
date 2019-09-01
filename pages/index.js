@@ -137,6 +137,14 @@ const Index = props => {
         </h1>
       </div>
     );
+  }else{
+    lanth = (
+      <div>
+        <h1>{locale.t("hello")}</h1>
+        {/* <h2>{locale.t('name',{name: 'วิว'})}</h2>
+                <h2>{locale.t('greeting')}</h2> */}
+      </div>
+    );
   }
 
   return (
