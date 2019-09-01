@@ -32,45 +32,40 @@ class About extends PureComponent {
         }
       }
     }
-    if(this.state.load){
+    if (this.state.load) {
       $("body")
-      .find(".heightcon")
-      .css("height", "100vh");
+        .find(".heightcon")
+        .css("height", "100vh");
     }
   }
 
-  componentWillMount() {
-    let salf = this
+  componentDidMount() {
+    let salf = this;
+
     setTimeout(function() {
       salf.setState({
         load: false
       });
-    }, 3000);
-   
+    }, 500);
   }
 
-  
-  
   render() {
-    const ImageList = () => (
+    const loadingabout = () => (
       <React.Fragment>
         {Array(2)
-          .fill('')
+          .fill("")
           .map((e, i) => (
-            <BulletList
-              key={i}
-            />
+            <BulletList key={i} />
           ))}
       </React.Fragment>
-    )
+    );
     let loaddingsk = "";
     if (this.state.load) {
-      loaddingsk = ImageList();
-     
+      loaddingsk = loadingabout();
     } else {
       $("body")
-      .find(".heightcon")
-      .removeAttr("style");
+        .find(".heightcon")
+        .removeAttr("style");
       loaddingsk = (
         <div className="about-class">
           <h1>About Idol Of Me</h1>
