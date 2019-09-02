@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Link from "./Link";
 import {
   Collapse,
@@ -13,14 +13,14 @@ import { connect } from "react-redux";
 
 
 export class Navbar extends Component {
-    
+
   state = {
     isOpen: false,
     dropdownOpen: false,
-    dropDownValue:''
+    dropDownValue: ''
   };
 
-  
+
 
   toggle = () => {
     this.setState({
@@ -50,6 +50,11 @@ export class Navbar extends Component {
         <Link activeClassName="nav-item active" href="/contact">
           <a className="nav-link">Contact Us</a>
         </Link>
+      </li>,
+      <li key={4}>
+        <Link activeClassName="nav-item active" href="/article">
+          <a className="nav-link">บทความ</a>
+        </Link>
       </li>
     ];
   }
@@ -57,15 +62,15 @@ export class Navbar extends Component {
   changeValuelan = (e) => {
     localStorage.setItem('dropDownValue', e.currentTarget.textContent);
     const valuelan = localStorage.getItem('dropDownValue');
-    
-    this.setState({dropDownValue: valuelan})
-    
+
+    this.setState({ dropDownValue: valuelan })
+
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const valuelan = localStorage.getItem('dropDownValue');
-    this.setState({dropDownValue: valuelan !== null ? valuelan:'เปลียนภาษา'})
-  
+    this.setState({ dropDownValue: valuelan !== null ? valuelan : 'เปลียนภาษา' })
+
   }
 
   render() {
@@ -73,7 +78,7 @@ export class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-lg  navbar-dark bg-dark mb-4">
         <div className="container">
-        
+
           <Link href="/">
             <a className="navbar-brand">Learn Next.js</a>
           </Link>
@@ -81,14 +86,14 @@ export class Navbar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <ul className="navbar-nav ml-auto">{this.renderLinks()}</ul>
 
-            <Dropdown style={{padding:"8px 0px"}}
+            <Dropdown style={{ padding: "8px 0px" }}
               isOpen={this.state.dropdownOpen}
               toggle={this.toggledropdown}
             >
               <DropdownToggle caret>{this.state.dropDownValue}</DropdownToggle>
               <DropdownMenu>
-                <DropdownItem><div onClick={this.changeValuelan} key={4}>English</div></DropdownItem>
-                <DropdownItem><div onClick={this.changeValuelan} key={5}>Thai</div></DropdownItem>
+                <DropdownItem><div onClick={this.changeValuelan} key={5}>English</div></DropdownItem>
+                <DropdownItem><div onClick={this.changeValuelan} key={6}>Thai</div></DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </Collapse>

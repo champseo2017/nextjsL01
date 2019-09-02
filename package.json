@@ -25,6 +25,7 @@
     "moment": "^2.20.1",
     "next": "^9.0.4",
     "next-redux-wrapper": "^3.0.0",
+    "next-routes": "^1.4.2",
     "next-seo": "0.0.7",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",

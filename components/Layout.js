@@ -29,7 +29,7 @@ class Layout extends Component {
                 {this.props.children}
              </div>
              <Footer/>
-             <style>{`
+             <style jsx>{`
             /* Smartphones (portrait and landscape) ----------- */
             @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
                 .container.justify-content-between.fullHeight.heightcon {
