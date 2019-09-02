@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import $ from "jquery";
 import '../scss/bootstrap.min.scss'
+import { VerticleButton as ScrollUpButton } from "react-scroll-up-button";
 
 class Layout extends Component {
     componentDidMount(){
@@ -27,6 +28,7 @@ class Layout extends Component {
             <Navbar/>
             <div className="container justify-content-between heightcon">
                 {this.props.children}
+                <ScrollUpButton AnimationDuration={1500} />
              </div>
              <Footer/>
              <style jsx>{`

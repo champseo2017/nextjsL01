@@ -8,7 +8,6 @@ import dynamic from "next/dynamic";
 import Pagination from "react-js-pagination";
 import Prices from "../components/Prices";
 import Googlemapindex from "../components/Googlemaps/Googlemapindex";
-import { VerticleButton as ScrollUpButton } from "react-scroll-up-button";
 import { locale } from "../locales/index";
 import { connect } from "react-redux";
 const { Translate, Localize } = require("react-i18nify");
@@ -137,7 +136,7 @@ const Index = props => {
         </h1>
       </div>
     );
-  }else{
+  } else {
     lanth = (
       <div>
         <h1>{locale.t("hello")}</h1>
@@ -188,7 +187,7 @@ const Index = props => {
       <p></p>
       <Posts posts={currentPosts} loading={loading} />
       {paginationposts}
-      <ScrollUpButton AnimationDuration={1500} />
+
       <NextSeo config={DEFAULT_SEO} />
     </Layout>
   );

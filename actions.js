@@ -31,3 +31,18 @@ export const loadPosts = (value) => {
         })
     }
 };
+
+// check post 404
+export const checkpost404 = (id, title) => {
+    
+    return dispatch => {
+        dispatch({
+            type: 'LOAD_CHECKPOST',
+    payload: fetch(`https://restapiwp.saleallday.com/wp-json/wp/v2/posts/${id}`)
+                .then(result => result.json())
+                
+        })
+    }
+};
+
+

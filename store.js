@@ -8,7 +8,9 @@ const exampleInitialState = {
   valuelan:null,
   isRejectedposts:null,
   isLodingposts:null,
-  dataPosts:null
+  dataPosts:null,
+  load_checkpost:null,
+  load_checkposttf:null
 }
 
 // reduces เพิ่มลบอายุ
@@ -49,6 +51,14 @@ export const reducer = (state = exampleInitialState, action) => {
           dataPosts: null
       })
       // load Posts
+
+      // loadcheck post
+      case 'LOAD_CHECKPOST_FULFILLED':
+        return Object.assign({}, state, {
+          load_checkposttf: true,
+          load_checkpost: action.payload.id
+      })
+      // loadcheck post
       default:
         return state
   }
