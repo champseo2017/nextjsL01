@@ -33,16 +33,41 @@ export const loadPosts = (value) => {
 };
 
 // check post 404
-export const checkpost404 = (id, title) => {
-    
+export const checkpost404 = (id) => {
+  
     return dispatch => {
-        dispatch({
-            type: 'LOAD_CHECKPOST',
-    payload: fetch(`https://restapiwp.saleallday.com/wp-json/wp/v2/posts/${id}`)
-                .then(result => result.json())
-                
+        return axios.get(`https://restapiwp.saleallday.com/wp-json/wp/v2/posts/${id}`, {
+           
+        }).then(results => {
+            dispatch({ type: 'LOAD_CHECKPOST_SUCCESS', payload: results.data })
+        }).catch(err => {
+            // กรณี error
+            dispatch({ type: 'LOAD_CHECKPOST_REJECTED', payload: err.message })
         })
     }
 };
 
+// load post id
+export const loadpostid = (id) => {
+    //console.log(id)
+    return dispatch => {
+        return axios.get(`https://restapiwp.saleallday.com/wp-json/wp/v2/posts/${id}`, {
+           
+        }).then(results => {
+            dispatch({ type: 'LOAD_POSTID_FULFILLED', payload: results.data }) ;
+           
+        }).catch(err => {
+            console.log(err)
+            // กรณี error
+            dispatch({ type: 'LOAD_POSTID_REJECTED', payload: err.message })
+        })
+    }
+};
 
+// save id post 
+export const Saveidposts = (id) => {
+    console.log(id)
+    return dispatch => {
+            dispatch({ type: 'SAVE_POSTID_SUCCESS', payload:id})
+    }
+};

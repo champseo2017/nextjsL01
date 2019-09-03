@@ -72,11 +72,10 @@ const Article = props => {
         <h1>บทความ</h1>
         {loadingposts}
         <Posts data={currentPosts} />
-        
+
       </div>
-      <p>
+      <p></p>
       {paginationposts}
-      </p>
       <NextSeo config={DEFAULT_SEO} />
     </Layout>
   );

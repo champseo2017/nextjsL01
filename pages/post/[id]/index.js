@@ -1,58 +1,92 @@
-import { useRouter } from "next/router";
-import React, { useState, useEffect } from "react";
+import { withRouter } from "next/router";
+import React, { Component, PureComponent } from 'react'
 import Layout from "../../../components/Layout";
 import Error from "next/error";
-import { checkpost404 } from "../../../actions";
+import { checkpost404, loadpostid, Saveidposts } from "../../../actions";
 import { connect } from "react-redux";
 import NextSeo from "next-seo";
 
 
-const Postpage = props => {
-  const routertitle = useRouter();
-  const { id } = routertitle.query;
+class Postpage extends Component {
 
-  // บทความ seo
-  const DEFAULT_SEO = {
-    title: id,
-    description: "บทความ"
-  };
-  
-
-  useEffect(() => {
-    props.checkpost404(id);
-  }, []);
-
-  let datapost = "";
-  if (typeof props.dataPosts === "undefined") {
-    datapost = <Error statusCode={404} />;
-  } else {
-    datapost = (
-      <div style={{ height: "100vh" }}>
-        <h1>{id}</h1>
-      </div>
-    );
+  constructor(props) {
+    const { router } = props
+    var integerid = parseInt(router.query.id, 10);
+    super(props);
+    this.state = {
+      id: integerid
+    }
   }
 
-  return (
-    <Layout>
-      {datapost}
-      <NextSeo config={DEFAULT_SEO} />
-    </Layout>
-  );
+  componentDidMount() {
+    this.fetchpost()
+  }
+
+  componentDidUpdate() {
+    this.props.checkpost404(this.state.id)
+  }
+
+  fetchpost = async () => {
+    await this.props.loadpostid(this.state.id)
+  }
+
+
+  createMarkup() {
+    return { __html: this.props.datapostid };
+  }
+
+  Postcontent() {
+    return <div style={{ height: "100vh" }} dangerouslySetInnerHTML={this.createMarkup()} />
+  }
+
+  render() {
+  
+    const DEFAULT_SEO = {
+      title: this.props.titleposid,
+      description: "บทความ"
+    };
+    let loadingposts = "";
+    if (this.props.lodingpost) loadingposts = <div>Loding....Posts</div>;
+    let datapost = "";
+
+    if (this.props.isLodingposts === false) {
+      datapost = <Error statusCode={404} />;
+      
+    } else {
+      datapost = <div>
+      {loadingposts}
+      {this.Postcontent()}
+      </div>
+    }
+    return (
+      <Layout>
+        {datapost}
+        <NextSeo config={DEFAULT_SEO} />
+      </Layout>
+    )
+  }
+
 };
 
 function mapStateToProps(state) {
   return {
     isLodingposts: state.load_checkposttf,
-    dataPosts: state.load_checkpost
+    dataPosts: state.load_checkpost,
+    titleposid: state.titlepostid,
+    datapostid: state.dataPosts,
+    tfloadpostid: state.isRejectedposts,
+    savepostsid: state.savepostsid,
+    lodingpost: state.isLodingpostsid
   };
 }
 
 const mapDispatchToProps = {
-  checkpost404
+  checkpost404,
+  loadpostid,
+  Saveidposts
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Postpage);
+)(withRouter(Postpage));
